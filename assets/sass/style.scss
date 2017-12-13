@@ -1,2 +1,10 @@
+@import '_normalize';
+@import '_grid';
+@import '_fonts';
 @import '_variables';
 @import '_main';
+@import 'pages/_blog';
+@import '_footer';
+@import 'pages/_homepage';
+@import 'pages/_contact';
+@import 'pages/_single';

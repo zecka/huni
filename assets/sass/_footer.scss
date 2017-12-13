@@ -1,0 +1,110 @@
+
+
+/* ----------------------------
+	    footer
+---------------------------- */
+
+
+#partners{
+	color: $primary-color;
+	font-size: 1.25em;
+	line-height: 1.4em;
+	font-weight: bold;
+	.logos{
+		img{
+			display: inline-block;
+		}
+		img+img{
+			margin-left: 130px;
+		}
+	}
+}
+#demo{
+	background-color: $dark-blue;
+}
+
+
+footer{
+	height: 300px;
+	.newsletter{
+		padding-top: 150px;
+		padding-bottom: 170px;
+		input, .button{
+			float: left;
+			height: 63px;
+			border-radius: 100px;
+		}
+		input{
+			
+			padding: 10px 30px;
+			display: inline-block;
+			border: 1px solid #ccc;
+			margin-right: -50px;
+			width: calc( 100% - 235px);
+			transition: all .2s ease-in-out;
+			&:focus{
+				outline: none;
+				box-shadow: 0px 0px 16px $primary-color;
+				border-color:#fff; 
+			}
+			&::placeholder { /* Most modern browsers support this now. */
+			   color: #939598;
+			}
+			
+		}
+		
+		.button{
+			width: 235px;
+			font-size: 20px;
+			text-align: center;
+			line-height: 38px;
+			&:hover{
+				background-color: $dark-blue;
+				border-color: $dark-blue;
+				color: #fff;
+			}
+		}
+		&::after{
+			display: block;
+			clear: both;
+			content: "";
+		}
+	}
+	nav{
+		text-align: center;
+		ul{
+			text-align: left;
+			display: inline-block;
+		}
+		&.right{
+			text-align: right;
+			ul{
+				display: inline-block;
+				text-align: left;
+			}
+		}
+		li{
+			display: block;
+			margin: 0;
+			margin-bottom: 30px;
+			a{
+				color: #6d6e71;
+				&:hover{
+					color: $primary-color;
+				}
+			}
+		}
+	}
+	.copyright{
+		background-color: $dark-blue;
+		padding: 45px;
+	}
+	.social-links{
+		font-size: 1.375em;
+		margin-top: 35px;
+		a+a{
+			margin-left: 25px;
+		}
+	}
+	
+}

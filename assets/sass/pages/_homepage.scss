@@ -1,0 +1,267 @@
+/* ----------------------------
+	    HOMEPAGE
+---------------------------- */
+body.home header{
+	background-color: transparent;
+	position: absolute;
+	z-index: 2;
+	width: 100%;
+}
+#welcome{
+	h2{
+		font-size: 2.625em;
+	}
+	background: linear-gradient(45deg, #8c1b39 0%,#c62650 100%); 
+	height: 90vh;
+	position: relative;
+	min-height: 450px;
+	.message{
+		position: absolute;
+		top: 55%;
+		transform: translateY(-50%);
+	}
+	p{
+		margin-bottom: 120px;
+	}
+	.macbook{
+		position: absolute;
+		right: 5%;
+		bottom: 10%;
+		width: 45%;
+		display: block;
+		height: auto;
+	}
+}
+
+#mockup{
+	.intro{
+		margin-top: 90px;
+		margin-bottom: 90px;
+	}
+	.mockup{
+		width: 700px;
+		float: left;
+		padding-right: 30px;
+		img{
+			max-width: 100%;
+			height: auto;
+		}
+	}
+	.mockup-info{
+		float: left;
+		width: 470px;
+		ul{
+			padding: 1em 0 0 0;
+			
+			list-style: none;
+			li{
+				padding: 20px 0 0 100px;
+				background-size: 70px;
+				background-position: left top;
+				background-repeat: no-repeat;
+				margin-bottom: 2em;
+				h4{
+					margin-top: 0;
+				}
+			}
+			.app-management{
+				background-image: url("../img/app-management.png");
+			}
+			.desktop-management{
+				background-image: url("../img/desktop-management.png");
+			}
+		}
+	}
+}
+
+.steps{
+	margin-top: 100px;
+	.step{
+		width: 33%;
+		float: left;
+		padding: 0 20px;
+		figure{
+			height: 135px;
+			img{
+				max-width: 100%;
+				height: 100%;
+			}
+		}
+	}
+}
+
+section.quote{
+	overflow: visible;
+	background-color: $light-gray;
+	position: relative;
+	text-align: center;
+	&::before{
+		content: "";
+		width: 84px;
+		height: 74px;
+		position: absolute;
+		left: 50%;
+		top: 0;
+		transform: translate(-50%, -50%);
+		display: block;
+		background-image: url('../img/quote.png');
+		background-size: contain;
+	}
+	blockquote{
+		cite{
+			text-transform: uppercase;
+			font-weight: bold;
+			font-style: normal;
+			margin-top: 70px;
+			display: block;
+			&::before{
+				content: "";
+				display: inline-block;
+				height: 5px;
+				width: 70px;
+				position: relative;
+				margin-right: 12px;
+				background-color: #c62650;
+				top: -0.2em;
+			}
+		}
+	}
+	
+}
+#pricing{
+	background-color: $light-gray;
+	padding-top: 0;
+	padding-bottom: 0;
+	.big-round-title{
+		position: relative;
+		padding: 130px 0 80px 0;
+		overflow: hidden;
+		&::before{
+			content: "";
+			position: absolute;
+			display: block;
+			background-color: #fff;
+			border-radius: 100% 100% 0 0;
+			left: -20%;
+			right: -20%;
+			bottom: -200%;
+			top: 30px;
+			z-index: 0;
+		}
+		h2{
+			position: relative;
+			z-index: 2;
+		}
+	}
+	.pricing-content{
+		background-color: $primary-color;
+		.pricing-col{
+			width: 33%;
+			padding: 30px;
+			float: left;
+		}
+		.princing-box{
+			background-color: #fff;
+			position: relative;
+			overflow: hidden;
+			padding: 45px;
+			.button{
+				width: 100%;
+				text-align: center;
+			}
+		}
+		.pricing-box-top{
+			position: relative;
+			height: 36px;
+			overflow: hidden;
+			background-color: #fff;
+			&::before{
+				background-color: $primary-color;
+				content: "";
+				display: block;
+				position: absolute;
+				left: -10%;
+				bottom: 10%;
+				right: -10%;
+				height: 150px;
+				border-radius: 100%;
+			}
+		}
+		.price{
+			font-weight: bold;
+			font-size: 2.188em;
+			color: #000;
+		}
+		ul{
+			list-style: none;
+			padding: 0;
+			margin-bottom: 50px;
+			li{
+				padding-left: 18px;
+				position: relative;
+				margin-bottom: 15px;
+				&:before{
+					content: "\f0a9";
+					font-family: FontAwesome;
+					position: absolute;
+					left: 0;
+					color: $secondary-color;
+				}
+			}
+		}
+	}
+}
+
+
+#benefits{
+	.steps{
+		figure{
+			text-align: center;
+			height: 92px;
+			position: relative;
+			&::before{
+				content: "";
+				width: 60px;
+				height: 60px;
+				background-color: $secondary-color;
+				position: absolute;
+				z-index: -1;
+				border-radius: 100px;
+				left: 25%;
+			}
+		}
+	}
+}
+
+#app{
+	margin-bottom: 490px;
+	background-color: $secondary-color;
+	overflow: visible;
+	.iphone{
+		display: flex;
+		justify-content: center;
+		div{
+			padding-top: 200px;
+		}
+		img{
+			margin-bottom: -490px;
+		}
+	}
+}
+
+#recent_news{
+	article{
+		padding-bottom: 45px;
+		border-bottom: 3px solid #eae9ed;
+		transition: all .3s ease-in-out;
+		position: relative;
+		&:hover{
+			border-bottom-color: $primary-color;
+		}
+		a{
+			color: #000;
+		}
+	}
+}
+
+
