@@ -8,10 +8,10 @@
 			<p>
 				We Offer A Full Range introzap service in the worldwid just make your area save
 			</p>
+			<img src="<?php echo get_template_directory_uri() ?>/assets/img/macbook.png" class="macbook">
 			<a href="#" class="button alt">Get Started</a>
 			<a href="#" class="button">Buy Now</a>
 		</div>
-		<img src="<?php echo get_template_directory_uri() ?>/assets/img/macbook.png" class="macbook">
 	</div>
 </section>
 
@@ -21,30 +21,33 @@
 		<p>After 5 years of working with other cellular providers and worrying about cellular data plans, Hologram allowed us to seamlessly deploy our devices.</p>
 	</div>
 	<div class="container clearfix">
-		<div class="mockup">
-			<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/mockup.png" />
-		</div>
-		<div class="mockup-info">
-			<ul>
-				<li class="app-management">
-					<h4>Free App Management</h4>
-					<p>Free app management rules to automate the process for employees</p>
-				</li>
-				<li class="desktop-management">
-					<h4>Free Desktop Management</h4>
-					<p>Free Destop management rules to automate the process for employees</p>
-				</li>
-			</ul>
+		<div class="row">
+			<div class="mockup col-7">
+				<img src="<?php echo get_stylesheet_directory_uri(); ?>/assets/img/mockup.png" />
+			</div>
+			<div class="mockup-info col-5">
+				<ul>
+					<li class="app-management">
+						<h4>Free App Management</h4>
+						<p>Free app management rules to automate the process for employees</p>
+					</li>
+					<li class="desktop-management">
+						<h4>Free Desktop Management</h4>
+						<p>Free Destop management rules to automate the process for employees</p>
+					</li>
+				</ul>
+			</div>
 		</div>
 	</div>
 </section>
 <section>
 	<div class="container text-center">
 		<h2>Give your home a voice</h2>
+	</div>
+	<div class="container text-center mobile-nomargin">
 		<div class="block-diagonal inverted">
 			<div class="container-8 overflowfix">
-				<p>You have enough to take care of when it comes to your home and your family. Notion lets you monitor your entire home, even when you aren’t there.
-				</p>
+				<p>You have enough to take care of when it comes to your home and your family. Notion lets you monitor your entire home, even when you aren’t there.</p>
 			</div>
 		</div>
 	</div>
@@ -55,22 +58,22 @@
 			<h2>How it Work</h2>
 			<p>After 5 years of working with other cellular providers and worrying about cellular data plans, Hologram allowed us to seamlessly deploy our devices.</p>
 		</div>
-		<div class="steps">
-			<div class="step">
+		<div class="steps row">
+			<div class="step col-4">
 				<figure>
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/certificate.png">
 				</figure>
 				<h3>Easy to install</h3>
 				<p>We built Notion to fit effortlessly into your home. Just pair, peel and stick! No complicated set-up, we promise!</p>
 			</div>
-			<div class="step">
+			<div class="step col-4">
 				<figure>
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/airport.png">
 				</figure>
 				<h3>Go Global with Ease</h3>
 				<p>Cellular networks are hard. Our global cell network makes it easy to connect your devices</p>
 			</div>
-			<div class="step">
+			<div class="step col-4">
 				<figure>
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/book.png">
 				</figure>
@@ -99,7 +102,7 @@
 	<div class="pricing-content">
 		<div class="container clearfix overflowfix">
 			<div class="row">
-				<div class="pricing-col inverted primarybg">
+				<div class="pricing-col col-4 inverted primarybg">
 					<h3>Pricing for the #1 Rated
 						Online Timesheet
 						Software
@@ -111,14 +114,15 @@
 						<a href="#" class="button">
 							WEEKLY
 						</a>
+					</div>
 						<p>
 						With the free Developer Plan, Pay-as-You-Go,
 and Monthly plan options
 						</p>
 						<a href="#" class="subtle-link">VIEW FULL PRICING DETAILS</a>
-					</div>
+					
 				</div>
-				<div class="pricing-col">
+				<div class="pricing-col col-4">
 					<div class="pricing-box-top"></div>
 					<div class="princing-box">
 						<h4 class="text-center">Standard</h4>
@@ -136,7 +140,7 @@ and Monthly plan options
 						
 					</div>
 				</div>
-				<div class="pricing-col">
+				<div class="pricing-col col-4">
 					<div class="pricing-box-top"></div>
 					<div class="princing-box">
 						<h4 class="text-center">Entreprise</h4>
@@ -164,22 +168,22 @@ and Monthly plan options
 			<h2 class="lion-title">Huni Benefits</h2>
 			<p>With over 2 million mobile apps in the major app stores, getting your app discovered is one of the biggest issues facing mobile app publishers today.</p>
 		</div>
-		<div class="steps">
-			<div class="step">
+		<div class="steps row">
+			<div class="step col-4">
 				<figure>
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/global.png">
 				</figure>
 				<h3>Go Global with Ease</h3>
 				<p>Whether in the field or your garage, you can reliably track your device behavior, send over-the-air software updates</p>
 			</div>
-			<div class="step">
+			<div class="step col-4">
 				<figure>
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/streamline.png">
 				</figure>
 				<h3>Streamline Supply Chains</h3>
 				<p>Avoid sourcing parts and negotiating with telecoms when trying to build your IoT product. We abstract the hard parts to help</p>
 			</div>
-			<div class="step">
+			<div class="step col-4">
 				<figure>
 					<img src="<?php echo get_template_directory_uri(); ?>/assets/img/scalable.png">
 				</figure>
@@ -192,20 +196,21 @@ and Monthly plan options
 <section id="app" class="inverted text-center">
 	<div class="container-6">
 		<h1>Download Our Free Apps
-On You Device</h1>
+On&nbsp;You&nbsp;Device</h1>
 		<p>With the free Developer Plan, Pay-as-You-Go, and Monthly plan options, Hologram's IoT cellular platform offers simple, transparent pricing plans for getting started, building</p>
 	</div>
-	<div class="iphone">
-		<div>
-			<a href="#" class="button apple black">Download Apps</a>
+	<div class="container">
+		<div class="iphone container-10">
+			<div class="apple-store-wrap">
+				<a href="#" class="button apple black btn-icon">Download Apps</a>
+			</div>
+			<div class="playstore-wrap">
+				<a href="#" class="button black playstore btn-icon">Google Play</a>
+			</div>
+			<figure>
+				<img src="<?php echo get_template_directory_uri(); ?>/assets/img/iphone.png">
+			</figure>
 		</div>
-		<figure>
-			<img src="<?php echo get_template_directory_uri(); ?>/assets/img/iphone.png">
-		</figure>
-		<div>
-			<a href="#" class="button apple playstore">Google Play</a>
-		</div>
-
 	</div>
 </section>
 <section id="recent_news">

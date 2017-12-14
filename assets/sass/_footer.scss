@@ -11,13 +11,34 @@
 	line-height: 1.4em;
 	font-weight: bold;
 	.logos{
-		img{
+		figure{
 			display: inline-block;
+			&+figure{
+				margin-left: 130px;
+			}
+			@media (max-width: $screen-xs-max) {
+				display: block;
+				width: 50%;
+				float: left;
+				margin-bottom: 20px;
+				&:nth-child(odd){
+					clear: left;	
+				}
+				&+figure{
+					margin-left: 0px;
+				}
+				img{
+					max-width: 90%;
+					margin: auto;
+				}
+				
+			}
+
 		}
-		img+img{
-			margin-left: 130px;
-		}
+
 	}
+				
+
 }
 #demo{
 	background-color: $dark-blue;
@@ -104,6 +125,26 @@ footer{
 		margin-top: 35px;
 		a+a{
 			margin-left: 25px;
+		}
+	}
+	@media (max-width: $screen-xs-max) {
+		.col-4{
+			text-align: center;
+		}
+		.logo{
+			display: inline-block;
+		}
+		nav{
+			margin-top: 20px;
+			text-align:  center;
+			&.right{
+				text-align: center;
+			}
+			ul,
+			&.right ul{
+				margin: 0;
+				text-align: center;
+			}
 		}
 	}
 	

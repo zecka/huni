@@ -17,13 +17,21 @@
 				<a class="logo" href="<?php echo home_url(); ?>">
 					Huni
 				</a>
-				<nav class="primary">
-					<?php wp_nav_menu( array( 'menu' =>'primary', 'container' => false) ); ?>
-				</nav>
-				<nav class="secondary_nav">
-					<a href="#" class="button">Shop</a>
-					<a href="#" class="button alt">Login</a>
-				</nav>
+				<a class="hamburger-menu">
+					<span></span>
+					<span></span>
+					<span></span>
+				</a>
+				<div class="navs-wrap">
+					<nav class="primary">
+						
+						<?php wp_nav_menu( array( 'menu' =>'primary', 'container' => false) ); ?>
+					</nav>
+					<nav class="secondary_nav">
+						<a href="#" class="button">Shop</a>
+						<a href="#" class="button alt">Login</a>
+					</nav>
+				</div>
 			</div>
 		</header>
 		<?php if(!is_front_page()){ ?>

@@ -1,0 +1,50 @@
+#sidebar{
+	margin-top: 150px;
+	.searchform{
+		text-align: left;
+		display: inline-block;
+	}
+	.widgettitle{
+		text-transform: uppercase;
+	}
+	.widget_categories{
+		ul{
+			list-style: none;
+			padding: 0;
+			li{
+				margin-bottom: 20px;
+				a{
+					color: #000;
+					&:hover{
+						color: $primary-color;
+					}
+				}
+			}
+		}
+	}
+}
+
+.mc4wp-form{
+	p{
+		margin: 10px 0;
+		display: inline-block;
+		width: 100%;
+	}
+	input[type=text],
+	input[type=email]{
+		padding: 15px 25px;
+		border-radius: 100px;
+		border: 1px solid #e6e4e4;
+	}
+	input[type=submit]{
+		background-color: $primary-color;
+		color: #fff;
+		padding: 10px 25px;
+		border: 1px solid $primary-color;
+		border-radius: 8px;
+		&:hover{
+			background-color: transparent;
+			color: $primary-color;
+		}
+	}
+}

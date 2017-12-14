@@ -1,3 +1,6 @@
+.single{
+
+}
 .article-header-meta{
 	text-align: right;
 	span,
@@ -59,40 +62,90 @@
 	}
 }
 
-.comments-area ol{
-	margin: 0;
-	list-style: none;
-	padding: 0;
-	& > li ol{
-		padding-left: 55px;
-		
-	}
-	.comment {
-		figure{
-			width: 140px;
-			float: left;
-			figcaption{
-				margin-top: 20px;
-				cite{
-					font-style: normal;				
-				}
-				a{
-					color: #000;
-					&:hover{
-						color: $primary-color;
+.comments-area {
+	ol{
+		margin: 0;
+		list-style: none;
+		padding: 0;
+		& > li ol{
+			padding-left: 55px;
+			
+		}
+		.comment {
+			figure{
+				width: 140px;
+				float: left;
+				figcaption{
+					margin-top: 20px;
+					cite{
+						font-style: normal;				
+					}
+					a{
+						color: #000;
+						&:hover{
+							color: $primary-color;
+						}
 					}
 				}
 			}
-		}
-		.comment-content{
-			width: calc(100% - 140px);
-			float: left;
-			padding-bottom: 50px;
-			margin-bottom: 50px;
-			border-bottom: 1px solid #e5e4e4;
-			p:first-child{
-				margin-top: 4px;
+			.comment-content{
+				width: calc(100% - 140px);
+				float: left;
+				padding-bottom: 50px;
+				margin-bottom: 50px;
+				border-bottom: 1px solid #e5e4e4;
+				p:first-child{
+					margin-top: 4px;
+				}
 			}
+			
+		}
+	}
+	.comment-form-comment label{
+		display: none;
+	}
+	.comment-form{
+		textarea{
+			padding: 30px;
+			width: 100%;
+		}
+		input[type=text]{
+			padding: 20px 30px ;
+			width: 100%;
+		}
+		p{
+			float: left;
+			width: calc(50% - 15px);
+		}
+		p.comment-form-author{
+			margin-right: 30px;
+		}
+		p.comment-form-comment,
+		p.comment-notes,
+		p.form-submit{
+			width: 100%;
+			display: block;
+			float: none;
+		}
+		p.form-submit{
+			text-align: right;
+			input[type=submit]{
+				color: #fff;
+				background-color: $primary-color;
+				border-radius: 0;
+				padding: 15px 30px;
+				display: inline-block;
+				border:0px;
+				cursor: pointer;
+				&:hover{
+					background-color: #666;
+				}
+			}
+		}
+		&::after{
+			display: block;
+			content: "";
+			clear: both;
 		}
 		
 	}

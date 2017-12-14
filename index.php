@@ -1,7 +1,9 @@
 <?php get_header(); ?>
-<?php get_template_part('partials/blog','intro'); ?>
+<div class="container">
+	<?php get_template_part('partials/blog','intro'); ?>
+</div>
 <main>
-		<div class="container">
+	<div class="container">
 		<?php if ( have_posts() ) : ?>
 		
 		<!-- Add the pagination functions here. -->
@@ -12,7 +14,7 @@
 			<article class="clearfix">
 				<figure><?php the_post_thumbnail('blog-thumb'); ?></figure>
 				<div class="article-excerpt">
-					<h4><?php the_title(); ?></h4>
+					<h4><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h4>
 					<?php the_excerpt(44); ?>
 					<div class="article-footer clearfix">
 						<div class="article-buttons">
@@ -21,10 +23,7 @@
 								<?php comments_number( 'No comments yet', 'One comment', '% comments' ); ?>
 							</span>
 						</div>
-						<div class="social-like flex">
-							<a href="#" class="fb-like btn-social">Like 120</a>
-							<a href="#" class="tweet btn-social">Tweet</a>
-						</div>
+						<?php get_template_part('partials/article/social','share'); ?>
 					</div>
 				</div>
 			</article>

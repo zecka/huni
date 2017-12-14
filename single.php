@@ -2,14 +2,12 @@
 <div class="container">
 	<div class="row">
 		<main class="col-9">
+				<?php get_template_part('partials/blog','intro'); ?>
 			<div class="article-header-meta">
 					<span class="comments_number">
 						<?php comments_number( 'No comments yet', 'One comment', '% comments' ); ?>
 					</span>
-					<div class="social-like flex">
-							<a href="#" class="fb-like btn-social">Like 120</a>
-							<a href="#" class="tweet btn-social">Tweet</a>
-					</div>
+					<?php get_template_part('partials/article/social','share'); ?>
 			</div>
 		
 			<h2 class="article-title"><?php the_title(); ?></h2>
@@ -24,6 +22,11 @@
 			
 		</main>
 		<aside class="col-3">
+			<?php if ( is_active_sidebar( 'sidebar-blog' ) ) : ?>
+				<div id="sidebar">
+					<?php dynamic_sidebar( 'sidebar-blog' ); ?>
+				</div>
+			<?php endif; ?>
 		</aside>
 		
 	</div>

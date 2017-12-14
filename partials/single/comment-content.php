@@ -46,10 +46,3 @@ function zk_comment_display($comment, $args, $depth) {
 	</div>
 <?php
 }
-
-add_filter('comment_reply_link', 'zk_replace_reply_link_class');
-function zk_replace_reply_link_class($class){
-    $class = str_replace("class='comment-reply-link", "class='comment-reply-link button square gray", $class);
-    return $class;
-}
-

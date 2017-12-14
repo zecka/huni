@@ -1,6 +1,15 @@
+[class*="container"]{
+	margin: auto;	
+}
 .container{
-	width: 1170px;
-	margin: auto;
+	max-width: 1170px;
+	width: 85%;
+}
+.container.mobile-nomargin{
+	width: 100%;
+}
+.flex{
+	display: flex;
 }
 .row{
 	margin: 0 -15px;
@@ -14,30 +23,39 @@
 .overflowfix{
 	overflow: hidden;
 }
+.container-10{
+	width: 83.3333333333333%;
+}
 .container-8{
 	width: 66.66666666666666%;
-	margin: auto;
 }
 .container-6{
 	width: 50%;
-	margin: auto;
+}
+.container-4{
+	width: 33%;
 }
 
+
 .row{
-	.col-4{
-		width: 33%;
+	[class*="col-"]{
 		float: left;
 		padding: 0 15px;
+	}
+	.col-4{
+		width: 33%;
+	}
+	.col-5{
+		width: 41.6666666666666%;
 	}
 	.col-6{
 		width: 50%;
-		float: left;
-		padding: 0 15px;
+	}
+	.col-7{
+		width: 58.33333333333333%;
 	}
 	.col-8{
 		width: 66%;
-		float: left;
-		padding: 0 15px;
 	}
 	.col-9{
 		width: 75%;
@@ -45,9 +63,30 @@
 	.col-3{
 		width: 25%;
 	}
+	.col-12{
+		float: none;
+	}
 	&::after{
 		content:"";
 		display: block;
 		clear: both;
+	}
+}
+
+@media (max-width: $screen-xs-max) {
+	.row{
+		[class*="col-"]{
+			width: 100%;
+			float: none;
+		}
+	}
+	.flex{
+		flex-direction: column;
+	}
+	.mobile-center{
+		text-align: center;
+	}
+	[class*="container"]{
+		width: 85%;
 	}
 }

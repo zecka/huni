@@ -52,9 +52,7 @@ section{
 /* ------------------
 	   VARIOUS CLASS
 ------------------ */
-.flex{
-	display: flex;
-}
+
 .relative{
 	position: relative;
 }
@@ -85,19 +83,27 @@ section{
 .block-diagonal{
 	background-color: $dark-blue;
 	padding-top: 20px;
-	margin-bottom: 100px;
+	padding-bottom: 100px;
 	&::after{
-		    content: "";
-		    display: block;
-		    width: 100%;
-		    height: 100px;
-		    background-color: $dark-blue;
-		    transform: skew(0deg, -4deg);
-		    top: 10px;
-		    transform-origin: top right;
-		    position: relative;
-		    z-index: -1;
-		    margin-top: -100px;
+		content: "";
+		display: block;
+		width: 101%;
+		height: 100px;
+		background-color: white;
+		-webkit-transform: skew(0deg, -4deg);
+		-ms-transform: skew(0deg, -4deg);
+		transform: skew(0deg, -4deg);
+		top: 100px;
+		@media (max-width: $screen-xs-max) {
+			top: 120px;	
+		}
+		-webkit-transform-origin: top right;
+		-ms-transform-origin: top right;
+		transform-origin: top right;
+		position: relative;
+		z-index: 2;
+		margin-top: -100px;
+		left: -1px;
 	}
 	p:last-child{
 		margin-bottom: 0;
@@ -128,10 +134,14 @@ img.size-large{
 /* ------------------
 	   INPUTS
 ------------------ */
-input:focus,
-button:focus{
-	outline: none;
-	box-shadow: 0px 0px 16px $primary-color;
+.searchform,
+.newsletter{
+
+	input:focus,
+	button:focus{
+		outline: none;
+		box-shadow: 0px 0px 16px $primary-color;
+	}
 }
 .searchform{
 	text-align: right;
@@ -169,8 +179,8 @@ button:focus{
 	   button
 ------------------ */
 .button{
-	border-radius: 20px;
-	padding: 10px 30px;
+	border-radius: 1.875em;
+	padding: 0.625em 1.875em;
 	display: inline-block;
 	border: 1px solid $primary-color;
 	background-color: $primary-color;
@@ -185,7 +195,7 @@ button:focus{
 	}
 	&.square{
 		border-radius: 0;
-		padding: 10px 20px;
+		padding: 0.625em 1.250em;
 	}
 	&.gray{
 		background-color: #e5e4e4;
@@ -194,6 +204,37 @@ button:focus{
 		&:hover{
 			background-color: $primary-color;
 			color: #fff;
+		}
+	}
+	
+	&.btn-icon{
+		position: relative;
+		padding-left: 3em;
+		&::before{
+			position: absolute;
+			top: 50%;
+			left: .7em;
+			transform: translateY(-50%);
+			font-size: 1.6em;
+			height: .8em;
+			line-height: .8em;
+
+		}
+	}
+	&.apple{
+		&::before{
+			content: "\f179";
+			font-family: FontAwesome;
+		}
+	}
+	&.playstore{
+		&::before{
+			content: "";
+			width: 1em;
+			background-repeat: no-repeat;
+			background-position: center center;
+			background-image: url('../img/playstore.png');
+			background-size: contain;
 		}
 	}
 }
@@ -220,7 +261,17 @@ button:focus{
 		color: #fff;
 	}
 }
-
+.button, 
+.inverted .button{
+	&.black{
+		background-color: #000;
+		border-color: black;
+		color: #fff;
+		&:hover{
+			border-color: #fff;
+		}
+	}
+}
 /* ------------------
 	   INVERTED
 ------------------ */
@@ -266,56 +317,6 @@ button:focus{
 		}
 	}
 }
-/* ------------------
-	    HEADER 
------------------- */
-.logo{
-	//icon: 45x42px logo width: 118px
-	display: block;
-	width: 118px;
-	padding-left: 52px;
-	padding-top: 4px;
-	height: 42px;
-	background-image: url('../img/lion-white.svg');
-	background-size: contain;
-	background-position: left center;
-	background-repeat: no-repeat;
-	font-size: 28px;
-}
-.logo.black{
-	background-image: url('../img/lion-black.svg');
-	color: #000;
-}
-header{
-	background-color: $primary-color;
-	padding: 45px 0;
-	.logo{
-		//icon: 45x42px logo width: 118px
-		float: left;
-	}
-	nav.primary{
-		float: left;
-		width: calc(100% - (118px + 240px));
-		line-height: 0.7em;
-		text-align: center;
-	}
-	.secondary_nav{
-		width: 240x;
-		float: right;
-	}
-	a{
-		color: #fff;
-	}
-}
-nav{
-	ul{
-		list-style: none;
-		li{
-			display: inline-block;
-			margin-right: 33px;
-		}
-	}
-}
 
 /* ----------------------------
 	    PAGE TITLE HEADER 
@@ -324,4 +325,6 @@ nav{
 	background-color: $light-gray;
 	padding: 100px 0 30px;
 }
+
+
 

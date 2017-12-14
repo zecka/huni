@@ -4,10 +4,18 @@
 			enable worldwide connectivity.</p>
 	</div>
 	<div class="container logos text-center">
-		<img src="<?php echo get_template_directory_uri() ?>/assets/img/partners/aos.png" />
-		<img src="<?php echo get_template_directory_uri() ?>/assets/img/partners/inking.png" />
-		<img src="<?php echo get_template_directory_uri() ?>/assets/img/partners/nelco.png" />
-		<img src="<?php echo get_template_directory_uri() ?>/assets/img/partners/river.png" />
+		<figure>
+			<img src="<?php echo get_template_directory_uri() ?>/assets/img/partners/aos.png" />
+		</figure>
+		<figure>
+			<img src="<?php echo get_template_directory_uri() ?>/assets/img/partners/inking.png" />
+		</figure>
+		<figure>
+			<img src="<?php echo get_template_directory_uri() ?>/assets/img/partners/nelco.png" />
+		</figure>
+		<figure>
+			<img src="<?php echo get_template_directory_uri() ?>/assets/img/partners/river.png" />
+		</figure>
 	</div>
 </section>
 <section id="demo" class="inverted text-center">
