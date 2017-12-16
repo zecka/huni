@@ -94,7 +94,7 @@ section{
 		-ms-transform: skew(0deg, -4deg);
 		transform: skew(0deg, -4deg);
 		top: 100px;
-		@media (max-width: $screen-xs-max) {
+		@include breakpoint(phone) {
 			top: 120px;	
 		}
 		-webkit-transform-origin: top right;

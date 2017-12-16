@@ -1,6 +1,9 @@
 /* ------------------
 	    HEADER 
 ------------------ */
+
+
+
 .logo{
 	//icon: 45x42px logo width: 118px
 	display: block;
@@ -21,13 +24,34 @@
 header{
 	background-color: $primary-color;
 	padding: 45px 0;
+	.header-wrap{
+		top: -100px;
+		transition: all .3s ease-in-out;
+		width: 100%;
+		&.sticky{
+			background-color: rgba(0, 0, 0, 0.7);
+			position: fixed !important;
+			top: 0;
+			z-index: 90;
+			padding: 20px 0;
+			@include breakpoint(sm-up){
+				.secondary_nav .button:not(.alt),
+				.secondary_nav .button.alt:hover{
+					color: #000;
+				}
+				.secondary_nav .button:not(.alt):hover{
+					color: #fff;
+				}
+			}
+		}
+	}
+
 	.logo{
 		//icon: 45x42px logo width: 118px
 		float: left;
-		@media (max-width: $screen-md-max) {
+		@include breakpoint(tablette) {
 			float: none;
 			margin: auto;
-			margin-bottom: 20px;
 		}
 		
 	}
@@ -36,7 +60,7 @@ header{
 		width: calc(100% - (118px + 240px));
 		line-height: 0.7em;
 		text-align: center;
-		@media (max-width: $screen-md-max) {
+		@include breakpoint(tablette) {
 			float: none;
 			width: 100%;
 			margin-top: 50px;
@@ -45,7 +69,7 @@ header{
 	.secondary_nav{
 		width: 240px;
 		float: right;
-		@media (max-width: $screen-md-max) {
+		@include breakpoint(tablette) {
 			position: absolute;
 			top: 40px;
 			right: 40px;
@@ -71,7 +95,7 @@ nav{
 	width: 39px;
 	height: 29px;
 	cursor: pointer;
-	@media (max-width: $screen-xs-max) {
+	@include breakpoint(phone) {
 		display: block;
 		float: right;
 	}
@@ -109,7 +133,7 @@ nav{
 }
 .navs-wrap{
 	transition: all .3s ease-in-out;
-	@media (max-width: $screen-xs-max) {
+	@include breakpoint(phone) {
 		min-height: 100vh;
 		background-color: #fff;
 		position: absolute;

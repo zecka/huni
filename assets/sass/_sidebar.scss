@@ -1,6 +1,6 @@
 #sidebar{
 	margin-top: 150px;
-	@media (max-width: $screen-xs-max) {
+	@include breakpoint(phone) {
 		text-align: center;
 	}
 	.searchform{

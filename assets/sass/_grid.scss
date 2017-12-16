@@ -73,7 +73,7 @@
 	}
 }
 
-@media (max-width: $screen-xs-max) {
+@include breakpoint(phone) {
 	.row{
 		[class*="col-"]{
 			width: 100%;

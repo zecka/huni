@@ -70,7 +70,7 @@
 		padding: 0;
 		& > li ol{
 			padding-left: 55px;
-			@media (max-width: $screen-xs-max) {
+			@include breakpoint(phone) {
 				padding-left: 20px;
 			}
 			
@@ -79,7 +79,7 @@
 			figure{
 				width: 140px;
 				float: left;
-				@media (max-width: $screen-xs-max) {
+				@include breakpoint(phone) {
 					float: none
 				}
 				figcaption{
@@ -101,7 +101,7 @@
 				padding-bottom: 50px;
 				margin-bottom: 50px;
 				border-bottom: 1px solid #e5e4e4;
-				@media (max-width: $screen-xs-max) {
+				@include breakpoint(phone) {
 					float: none;
 					width: 100%;
 				}
