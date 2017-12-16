@@ -43,6 +43,7 @@
 	figure{
 		width: 140px;
 		float: left;
+
 		figcaption{
 			margin-top: 20px;
 			a{
@@ -69,12 +70,18 @@
 		padding: 0;
 		& > li ol{
 			padding-left: 55px;
+			@media (max-width: $screen-xs-max) {
+				padding-left: 20px;
+			}
 			
 		}
 		.comment {
 			figure{
 				width: 140px;
 				float: left;
+				@media (max-width: $screen-xs-max) {
+					float: none
+				}
 				figcaption{
 					margin-top: 20px;
 					cite{
@@ -94,6 +101,10 @@
 				padding-bottom: 50px;
 				margin-bottom: 50px;
 				border-bottom: 1px solid #e5e4e4;
+				@media (max-width: $screen-xs-max) {
+					float: none;
+					width: 100%;
+				}
 				p:first-child{
 					margin-top: 4px;
 				}

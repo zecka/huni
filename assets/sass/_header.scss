@@ -24,16 +24,32 @@ header{
 	.logo{
 		//icon: 45x42px logo width: 118px
 		float: left;
+		@media (max-width: $screen-md-max) {
+			float: none;
+			margin: auto;
+			margin-bottom: 20px;
+		}
+		
 	}
 	nav.primary{
 		float: left;
 		width: calc(100% - (118px + 240px));
 		line-height: 0.7em;
 		text-align: center;
+		@media (max-width: $screen-md-max) {
+			float: none;
+			width: 100%;
+			margin-top: 50px;
+		}
 	}
 	.secondary_nav{
-		width: 240x;
+		width: 240px;
 		float: right;
+		@media (max-width: $screen-md-max) {
+			position: absolute;
+			top: 40px;
+			right: 40px;
+		}
 	}
 	a{
 		color: #fff;

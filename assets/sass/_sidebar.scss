@@ -1,5 +1,8 @@
 #sidebar{
 	margin-top: 150px;
+	@media (max-width: $screen-xs-max) {
+		text-align: center;
+	}
 	.searchform{
 		text-align: left;
 		display: inline-block;
