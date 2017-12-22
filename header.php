@@ -36,7 +36,7 @@
 				</div>
 			</div>
 		</header>
-		<?php if(!is_front_page()){ ?>
+		<?php if(!is_front_page() && !is_404()){ ?>
 			<section id="pageTitle">
 				<div class="container">
 					<h1><?php

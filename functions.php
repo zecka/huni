@@ -2,6 +2,19 @@
 define( 'HUNI_VERSION', '1.0.0' );
 define( 'HUNI_TEXT_DOMAIN', 'huni' );
 
+/*
+ * Load Redux Frameweok
+ *
+ *
+ */
+ 
+if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/ReduxFramework/ReduxCore/framework.php' ) ) {
+    require_once( dirname( __FILE__ ) . '/ReduxFramework/ReduxCore/framework.php' );
+}
+if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/ReduxFramework/sample/sample-config.php' ) ) {
+    require_once( dirname( __FILE__ ) . '/ReduxFramework/sample/sample-config.php' );
+}
+
 add_action('wp_enqueue_scripts', 'huni_enqueue_scripts');
 function huni_enqueue_scripts(){
 	wp_enqueue_style('main', get_template_directory_uri().'/assets/css/style.css', '', HUNI_VERSION);
@@ -18,3 +31,5 @@ get_template_part('controllers/single/comments');
 get_template_part('partials/breadcrumb');
 get_template_part('partials/single/comment-content');
 get_template_part('shortcodes/box-highlight');
+
+
