@@ -3,7 +3,7 @@
 Template Name: Contact
 */
  get_header(); ?>
-<section>
+<section id="intro-contact">
 	<div class="container">
 		<div class="intro-contact">
 			<div class="row">
@@ -14,8 +14,7 @@ Template Name: Contact
 			</div>
 		</div>
 	</div>
-</section>
-<section>
+
 	<div class="container-8 text-center contact-form-intro">
 		<h2>Let's talk</h2>
 		<p>Suspe ndisse suscipit sagittis leo sit met dimentum estibulum issim posuere cubilia Curae Suspendisse at consectetur massa. Curabitur non ipsum nisinec dapibus elit. Donec nec</p>
@@ -37,8 +36,7 @@ Template Name: Contact
 			<input type="submit" class="button" value="Send Message">
 		</form>
 	</div>
-</section>
-<section>
+
 	<div class="row">
 		<div class="col-6">
 			    <div id="map"></div>
