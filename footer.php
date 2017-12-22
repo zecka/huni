@@ -20,7 +20,7 @@
 </section>
 <section id="demo" class="inverted text-center">
 	<div class="container-6">
-		<h1>We offer Free demo for new&nbsp;Customer</h1>
+		<h2>We offer Free demo for new&nbsp;Customer</h2>
 		<a class="button" href="#">Request a demo</a>
 	</div>
 	

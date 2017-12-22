@@ -52,7 +52,7 @@
 		</div>
 	</div>
 </section>
-<section>
+<section id="howitwork">
 	<div class="container text-center">
 		<div class="container-8">
 			<h2>How it Work</h2>
