@@ -109,7 +109,27 @@
 		}
 	}
 }
-
+.page-numbers{
+	margin: 0;
+	padding: 0;
+	padding-top: 50px;	
+	text-align: center;
+	li{
+		margin-right: 0px;
+		&+li{
+			margin-left: 29px;
+		}
+		color: $primary-color;
+		font-weight: bold;
+		font-size: 1.500em;
+		a{
+			color: #000;
+		}
+		i{
+			color: $primary-color;
+		}
+	}
+}
 
 @include breakpoint(phone) {
 .blog-intro{

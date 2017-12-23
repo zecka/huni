@@ -8,6 +8,7 @@
 	<script src="<?php echo esc_url( get_template_directory_uri() ); ?>/js/html5.js"></script>
 	<![endif]-->
 	<?php wp_head(); ?>
+	<?php global $huni_options; ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -16,7 +17,7 @@
 			<div class="header-wrap">
 				<div class="container clearfix">
 					<a class="logo" href="<?php echo home_url(); ?>">
-						Huni
+						<img src="<?php echo $huni_options['logo-light']['url']; ?>" />
 					</a>
 					<a class="hamburger-menu">
 						<span></span>

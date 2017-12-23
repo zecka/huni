@@ -1,10 +1,14 @@
-$primary-color: #c62650;
-$primary-font: 'Roboto', sans-serif;
-$title-font: 'Merriweather Sans', sans-serif;
+
+$primary-color: #c62650 !default;	
+$secondary-color: #5842dc !default ;
+$primary-font: 'Roboto', sans-serif !default ;
+$title-font: 'Merriweather Sans', sans-serif !default ;
+$logo-width: 118px !default;
+$logo-height: 42px !default;
+
 $text-color: rgba(0, 0, 0, 0.7);
 $light-gray: #f8f8f8;
 $dark-blue: #242f39;
-$secondary-color: #5842dc;
 
 
 // Defining values.  https://www.sitepoint.com/managing-responsive-breakpoints-sass/

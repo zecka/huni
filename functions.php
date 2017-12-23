@@ -8,15 +8,20 @@ define( 'HUNI_TEXT_DOMAIN', 'huni' );
  *
  */
  
-if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/ReduxFramework/ReduxCore/framework.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/ReduxFramework/ReduxCore/framework.php' );
+if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/inc/ReduxFramework/ReduxCore/framework.php' ) ) {
+    require_once( get_template_directory() . '/inc/ReduxFramework/ReduxCore/framework.php' );
 }
-if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/configs/admin/options-theme.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/configs/admin/options-theme.php' );
+if ( !isset( $huni_options ) && file_exists( dirname( __FILE__ ) . '/configs/admin/huni-options.php' ) ) {
+    require_once( get_template_directory() . '/configs/admin/huni-options.php' );
+    require_once( get_template_directory() . '/configs/admin/huni-options-save.php' );
+
 }
 
+
+
+
 if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/configs/admin/options-theme-sample.php' ) ) {
-    require_once( dirname( __FILE__ ) . '/configs/admin/options-theme-sample.php' );
+  //  require_once( dirname( __FILE__ ) . '/configs/admin/options-theme-sample.php' );
 }
 
 add_action('wp_enqueue_scripts', 'huni_enqueue_scripts');
@@ -32,8 +37,10 @@ get_template_part('configs/nav');
 get_template_part('configs/sidebar');
 get_template_part('controllers/single/author-avatar');
 get_template_part('controllers/single/comments');
+get_template_part('controllers/archive/numeric-pagination');
 get_template_part('partials/breadcrumb');
 get_template_part('partials/single/comment-content');
 get_template_part('shortcodes/box-highlight');
+
 
 

@@ -1,3 +1,4 @@
+<?php global $huni_options; ?>
 <section id="partners">
 	<div class="container-6  text-center">
 		<p>Trusted by developers and businesses of all sizes to 
@@ -33,7 +34,9 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-4">
-					<span class="logo black">Huni</span>
+					<span class="logo black">
+						<img src="<?php echo $huni_options['logo-dark']['url']; ?>" />
+					</span>
 					<div class="social-links">
 						<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
 						<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
