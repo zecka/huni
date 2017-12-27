@@ -1,6 +1,8 @@
 <?php
-define( 'HUNI_VERSION', '1.0.0' );
+
+define( 'HUNI_VERSION', wp_get_theme()->get( 'Version' ) );
 define( 'HUNI_TEXT_DOMAIN', 'huni' );
+
 
 /*
  * Load Redux Frameweok
@@ -14,6 +16,10 @@ if ( !class_exists( 'ReduxFramework' ) && file_exists( dirname( __FILE__ ) . '/i
 if ( !isset( $huni_options ) && file_exists( dirname( __FILE__ ) . '/configs/admin/huni-options.php' ) ) {
     require_once( get_template_directory() . '/configs/admin/huni-options.php' );
     require_once( get_template_directory() . '/configs/admin/huni-options-save.php' );
+
+}
+if ( !isset( $huni_options ) && file_exists( dirname( __FILE__ ) . '/configs/admin/options-theme-sample.php' ) ) {
+    require_once( get_template_directory() . '/configs/admin/options-theme-sample.php' );
 
 }
 
@@ -35,12 +41,24 @@ get_template_part('configs/images');
 get_template_part('configs/excerpt');
 get_template_part('configs/nav');
 get_template_part('configs/sidebar');
+get_template_part('configs/beaver/beaver-settings');
+get_template_part('configs/beaver/beaver-helpers');
+
 get_template_part('controllers/single/author-avatar');
 get_template_part('controllers/single/comments');
 get_template_part('controllers/archive/numeric-pagination');
+get_template_part('controllers/header/header-class');
+
+get_template_part('controllers/social-links');
+
 get_template_part('partials/breadcrumb');
 get_template_part('partials/single/comment-content');
+
 get_template_part('shortcodes/box-highlight');
+get_template_part('shortcodes/pricing-box');
 
 
-
+/*********
+ * BELOW FUNCTIONS NEED TO BE ORDERED IN RIGHT FOLDER
+ */
+ 

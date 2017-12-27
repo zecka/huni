@@ -102,7 +102,7 @@
 	<div class="pricing-content">
 		<div class="container clearfix overflowfix">
 			<div class="row">
-				<div class="pricing-col col-4 inverted primarybg">
+				<div class="pricing-wrap col-4 inverted primarybg">
 					<h3>Pricing for the #1 Rated
 						Online Timesheet
 						Software
@@ -122,7 +122,7 @@ and Monthly plan options
 						<a href="#" class="subtle-link">VIEW FULL PRICING DETAILS</a>
 					
 				</div>
-				<div class="pricing-col col-4">
+				<div class="pricing-wrap col-4">
 					<div class="pricing-box-top"></div>
 					<div class="princing-box">
 						<h4 class="text-center">Standard</h4>
@@ -140,7 +140,7 @@ and Monthly plan options
 						
 					</div>
 				</div>
-				<div class="pricing-col col-4">
+				<div class="pricing-wrap col-4">
 					<div class="pricing-box-top"></div>
 					<div class="princing-box">
 						<h4 class="text-center">Entreprise</h4>
@@ -238,5 +238,15 @@ On&nbsp;You&nbsp;Device</h1>
 		</div>
 	</div>
 </section>
+
+<?php echo do_shortcode('[huni-pricing]<ul>
+				<li>Up to 40 active</li>
+				<li>Unlimited Profiles</li>
+				<li>Unlimited Emails</li>
+				<li>Ongoing success webinars</li>
+			</ul>[/huni-pricing]'); ?>
+			
+			
+<?php echo do_shortcode('[wporg]another [shortcode] is included[/wporg]'); ?>
 
 <?php get_footer(); ?>

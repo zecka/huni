@@ -2,7 +2,9 @@
 /*
 Template Name: Contact
 */
- get_header(); ?>
+ get_header();
+ global $huni_options;
+  ?>
 <section id="intro-contact">
 	<div class="container">
 		<div class="intro-contact">
@@ -54,7 +56,7 @@ Template Name: Contact
 							  new google.maps.Point(32,64)
 						);
 											
-						var myposition = {lat: 40.7611092, lng: -74.0001543};
+						var myposition = {lat: <?php echo $huni_options['contact-lat']; ?>, lng: <?php echo $huni_options['contact-lng']; ?>};
 				        var map = new google.maps.Map(document.getElementById('map'), {
 				          zoom: 10,
 				          center: myposition,
@@ -73,23 +75,17 @@ Template Name: Contact
 		</div>
 		<div class="col-6 contact-aside">
 			<ul class="contact-info">
-				<li><i class="fa fa-map-o" aria-hidden="true"></i> <span>Barisal City , NY 10036, United States</span></li>
-				<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <span>introzap_info@gmail.com</span></li>
-				<li><i class="fa fa-phone" aria-hidden="true"></i> <span>+8801713879773</span></li>
+				<li><i class="fa fa-map-o" aria-hidden="true"></i> <span><?php echo $huni_options['contact-address']; ?></span></li>
+				<li><i class="fa fa-envelope-o" aria-hidden="true"></i> <span><?php echo $huni_options['contact-mail']; ?></span></li>
+				<li><i class="fa fa-phone" aria-hidden="true"></i> <span><?php echo $huni_options['contact-phone']; ?></span></li>
 			</ul>
 			<ul class="contact-socials">
-				<li>
-					<a href="#"><i class="fa fa-facebook"></i></a>
-				</li>
-				<li>
-					<a href="#"><i class="fa fa-twitter"></i></a>
-				</li>
-				<li>
-					<a href="#"><i class="fa fa-dribbble"></i></a>
-				</li>
-				<li>
-					<a href="#"><i class="fa fa-linkedin"></i></a>
-				</li>
+				<?php foreach(get_huni_social_links() as $social){ ?>
+						<li>
+							<a href="<?php echo $social['url']; ?>"><i class="<?php echo $social['icon']; ?>"></i></a>
+						</li>
+				<?php } ?>
+
 			<ul>
 		</div>
 	</div>

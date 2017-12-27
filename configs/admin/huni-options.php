@@ -157,6 +157,13 @@ Redux::setSection($opt_name, array(
 			'default'	=> '42px',
 
 		),
+		array(
+			'id'       => 'transparent-header',
+			'type'     => 'switch',
+			'title'    => __( 'Transparent Header', HUNI_TEXT_DOMAIN ),
+			'subtitle' => __( 'Enable transparent header position absolute', HUNI_TEXT_DOMAIN ),
+			'default'  => false,
+		)
 	)
 ));
 

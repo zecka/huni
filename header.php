@@ -13,7 +13,7 @@
 
 <body <?php body_class(); ?>>
 	<div id="wrapper">
-		<header class="inverted primarybg">
+		<header <?php huni_header_class(); ?>>
 			<div class="header-wrap">
 				<div class="container clearfix">
 					<a class="logo" href="<?php echo home_url(); ?>">
