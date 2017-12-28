@@ -101,7 +101,7 @@
 	</div>
 	<div class="pricing-content">
 		<div class="container clearfix overflowfix">
-			<div class="row">
+			<div class="row inverted">
 				<div class="pricing-wrap col-4 inverted primarybg">
 					<h3>Pricing for the #1 Rated
 						Online Timesheet

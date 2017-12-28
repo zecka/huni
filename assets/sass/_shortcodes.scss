@@ -20,6 +20,7 @@
 	}
 }
 .pricing-wrap{
+	
 	.princing-box{
 		background-color: #efefef;
 		position: relative;
@@ -65,6 +66,9 @@
 				background-color: $secondary-color;
 				color: #fff;
 			}
+		}
+		h4{
+			color: $title-color;
 		}
 	}
 }
