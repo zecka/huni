@@ -33,7 +33,7 @@ function zk_comment_display($comment, $args, $depth) {
 					<?php // printf(__('%1$s at %2$s'), get_comment_date('d M, Y'),  get_comment_time()) ?>
 					<?php printf(__('%1$s'), get_comment_date('d M, Y')); ?>
 				</a>
-				<?php comment_reply_link(array_merge( $args, array('add_below' => $add_below, 'depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+				<?php comment_reply_link($args) ?>
 	
 						<?php edit_comment_link(__('(Edit)'),'  ','') ?>
 			</div>

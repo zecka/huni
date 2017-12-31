@@ -60,7 +60,7 @@ if ( post_password_required() ) {
 	<?php endif; ?>
 
 	<?php
-		$option_form=array(
+		$options_form=array(
 				'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
 				'title_reply_after'  => '</h2>',
 		);

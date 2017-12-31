@@ -1,5 +1,4 @@
 #sidebar{
-	margin-top: 150px;
 	@include breakpoint(phone) {
 		text-align: center;
 	}

@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -50,8 +51,6 @@
 				                the_title();
 				                rewind_posts();
 				            }
-				        }elseif(is_single()){
-					        _e("Blog Details", HUNI_TEXT_DOMAIN);
 				        }else{
 					        the_title();
 				        }

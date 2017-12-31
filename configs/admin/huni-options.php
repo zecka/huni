@@ -23,34 +23,54 @@ $theme = wp_get_theme(); // For use with some settings. Not necessary.
 
  $args = array(
 	// TYPICAL -> Change these values as you need/desire
-	'opt_name'			   => $opt_name,
+	'opt_name'				 => $opt_name,
 	// This is where your data is stored in the database and also becomes your global variable name.
-	'display_name'		   => $theme->get( 'Name' ),
+	'display_name'			=> $theme->get( 'Name' ),
 	// Name that appears at the top of your panel
-	'display_version'	   => $theme->get( 'Version' ),
+	'display_version'		  => $theme->get( 'Version' ),
 	// Version that appears at the top of your panel
-	'menu_type'			   => 'menu',
+	'menu_type'				  => 'menu',
 	//Specify if the admin menu should appear or not. Options: menu or submenu (Under appearance only)
-	'allow_sub_menu'	   => true,
+	'allow_sub_menu'		 => true,
 	// Show the sections below the admin menu item or not
-	'menu_title'		   => __( 'Huni Options', HUNI_TEXT_DOMAIN ),
-	'page_title'		   => __( 'Huni Options', HUNI_TEXT_DOMAIN ),
+	'menu_title'			  => __( 'Huni Options', HUNI_TEXT_DOMAIN ),
+	'page_title'			  => __( 'Huni Options', HUNI_TEXT_DOMAIN ),
 	);
 	
 Redux::setArgs( $opt_name, $args );
 
+// Set variable for multiple_use_field
 
+
+$layout_options=array(
+		'no-sidebar' => array(
+			'alt' => '1 Column',
+			'img' => ReduxFramework::$_url . 'assets/img/1col.png'
+		),
+		'sidebar-left' => array(
+			'alt' => '2 Column Left',
+			'img' => ReduxFramework::$_url . 'assets/img/2cl.png'
+		),
+		'sidebar-right' => array(
+			'alt' => '2 Column Right',
+			'img' => ReduxFramework::$_url . 'assets/img/2cr.png'
+		),
+		'two-sidebar' => array(
+			'alt' => '3 Column Middle',
+			'img' => ReduxFramework::$_url . 'assets/img/3cm.png'
+		)
+	);
 
 /*
  *	LET'S START, CREAT PAGE AND FIELD
  */
  
  Redux::setSection( $opt_name, array(
-	'title'			   => __( 'Option générale', 'redux-framework-demo' ),
+	'title'				  => __( 'Option générale', 'redux-framework-demo' ),
 	'id'			   => 'basic',
-	'desc'			   => __( 'These are really basic fields!', 'redux-framework-demo' ),
+	'desc'				 => __( 'These are really basic fields!', 'redux-framework-demo' ),
 	'customizer_width' => '400px',
-	'icon'			   => 'el el-home'
+	'icon'				 => 'el el-home'
 ) );
 
 
@@ -158,9 +178,9 @@ Redux::setSection($opt_name, array(
 
 		),
 		array(
-			'id'       => 'transparent-header',
-			'type'     => 'switch',
-			'title'    => __( 'Transparent Header', HUNI_TEXT_DOMAIN ),
+			'id'		  => 'transparent-header',
+			'type'	  => 'switch',
+			'title'	  => __( 'Transparent Header', HUNI_TEXT_DOMAIN ),
 			'subtitle' => __( 'Enable transparent header position absolute', HUNI_TEXT_DOMAIN ),
 			'default'  => false,
 		)
@@ -168,40 +188,75 @@ Redux::setSection($opt_name, array(
 ));
 
 Redux::setSection($opt_name, array(
-	'title'	   => __('Contact Page', HUNI_TEXT_DOMAIN),
-	'id'		   => 'basic-contact',
-	'subsection'  => true,
-	'fields'	   => array(
+	'title'			=> __('Blog', HUNI_TEXT_DOMAIN),
+	'id'			=> 'basic-blog',
+	'subsection'	=> true,
+	'fields'		=> array(
 		array(
-			'title'	  => __('Email', HUNI_TEXT_DOMAIN),
-			'id'		  => 'contact-mail',
-			'type'	  => 'text',
-			'validate' => 'email',
-			'default'  => 'introzap_info@gmail.com',
+			'title'		=> __('Enable Social Share on single page'),
+			'id'		=> 'social-share-single',
+			'type'		=> 'switch',
+			'default'	=> true,
 		),
 		array(
-			'title'	  => __('Address', HUNI_TEXT_DOMAIN),
-			'id'		  => 'contact-address',
-			'type'	  => 'textarea',
-			'default'  => 'Barisal City , NY 10036, United States',
+			'title'		=> __('Enable Social Share on archive page'),
+			'id'		=> 'social-share-archive',
+			'type'		=> 'switch',
+			'default'	=> true,
 		),
 		array(
-			'title'	  => __('Phone', HUNI_TEXT_DOMAIN),
-			'id'		  => 'contact-phone',
-			'type'	  => 'text',
-			'default'  => '+8801713879773',
+			'id'		=> 'layout-archive',
+			'type'		=> 'image_select',
+			'title'		=> __( 'Layout Archive', HUNI_TEXT_DOMAIN ),
+			//Must provide key => value(array:title|img) pairs for radio options
+			'options'	=> $layout_options,
+			'default'	=> 'no-sidebar',
 		),
 		array(
-			'title'	  => __('Map Marker Latitude', HUNI_TEXT_DOMAIN),
-			'id'		  => 'contact-lat',
-			'type'	  => 'text',
-			'default'  => '40.7611092',
+			'id'		=> 'layout-single',
+			'type'		=> 'image_select',
+			'title'		=> __( 'Layout Single', HUNI_TEXT_DOMAIN ),
+			//Must provide key => value(array:title|img) pairs for radio options
+			'options'	=> $layout_options,
+			'default'	=> 'sidebar-right',
+		)
+	)
+));
+Redux::setSection($opt_name, array(
+	'title'			=> __('Contact Page', HUNI_TEXT_DOMAIN),
+	'id'			=> 'basic-contact',
+	'subsection'	=> true,
+	'fields'		=> array(
+		array(
+			'title'		=> __('Email', HUNI_TEXT_DOMAIN),
+			'id'		=> 'contact-mail',
+			'type'		=> 'text',
+			'validate'	=> 'email',
+			'default'	=> 'introzap_info@gmail.com',
 		),
 		array(
-			'title'	  => __('Map Marker Longitude', HUNI_TEXT_DOMAIN),
-			'id'		  => 'contact-lng',
-			'type'	  => 'text',
-			'default'  => '-74.0001543',
+			'title'		=> __('Address', HUNI_TEXT_DOMAIN),
+			'id'		=> 'contact-address',
+			'type'		=> 'textarea',
+			'default'	=> 'Barisal City , NY 10036, United States',
+		),
+		array(
+			'title'		=> __('Phone', HUNI_TEXT_DOMAIN),
+			'id'		=> 'contact-phone',
+			'type'		=> 'text',
+			'default'	=> '+8801713879773',
+		),
+		array(
+			'title'		=> __('Map Marker Latitude', HUNI_TEXT_DOMAIN),
+			'id'		=> 'contact-lat',
+			'type'		=> 'text',
+			'default'	=> '40.7611092',
+		),
+		array(
+			'title'		=> __('Map Marker Longitude', HUNI_TEXT_DOMAIN),
+			'id'		=> 'contact-lng',
+			'type'		=> 'text',
+			'default'	=> '-74.0001543',
 		),
 
 		
@@ -241,14 +296,14 @@ Redux::setSection( $opt_name, array(
 		'icon'	 => 'el el-font',
 		'fields' => array(
 			array(
-				'id'	   => 'body-font',
-				'type'	   => 'typography',
+				'id'		=> 'body-font',
+				'type'		  => 'typography',
 				'title'	   => __( 'Body Font', 'redux-framework-demo' ),
 				'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
 				'google'   => true,
 				'units'		  => 'px',
 				'default'  => array(
-					'color'		  => '#dd9933',
+					'color'			=> '#dd9933',
 					'font-size'	  => '16px',
 					'line-height' => '19px',
 					'font-family' => 'Roboto',
@@ -256,21 +311,21 @@ Redux::setSection( $opt_name, array(
 				),
 			),
 			array(
-				'id'		  => 'title-font',
-				'type'		  => 'typography',
-				'title'		  => __( 'Title font', 'redux-framework-demo' ),
-				'font-backup' => false,
-				'all_styles'  => false,
-				'font-size'	=> false,
+				'id'				=> 'title-font',
+				'type'		  	=> 'typography',
+				'title'		  	=> __( 'Title font', 'redux-framework-demo' ),
+				'font-backup'	=> false,
+				'all_styles'  	=> false,
+				'font-size'		=> false,
 				'text-align'	=> false,
 				'line-height'	=> false,
 				// Defaults to px
-				'subtitle'	  => __( 'Typography option with each property can be called individually.', 'redux-framework-demo' ),
-				'default'	  => array(
-					'color'		  => '#333',
+				'subtitle'		 => __( 'Typography option with each property can be called individually.', 'redux-framework-demo' ),
+				'default'		=> array(
+					'color'			=> '#333',
 					'font-style'  => '700',
 					'font-family' => 'Roboto',
-					'google'	  => true,
+					'google'		=> true,
 					'font-size'	  => '16px',
 					'line-height' => '40px'
 				),

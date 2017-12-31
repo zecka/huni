@@ -26,10 +26,6 @@ if ( !isset( $huni_options ) && file_exists( dirname( __FILE__ ) . '/configs/adm
 
 
 
-if ( !isset( $redux_demo ) && file_exists( dirname( __FILE__ ) . '/configs/admin/options-theme-sample.php' ) ) {
-  //  require_once( dirname( __FILE__ ) . '/configs/admin/options-theme-sample.php' );
-}
-
 add_action('wp_enqueue_scripts', 'huni_enqueue_scripts');
 function huni_enqueue_scripts(){
 	wp_enqueue_style('main', get_template_directory_uri().'/assets/css/style.css', '', HUNI_VERSION);
@@ -48,12 +44,14 @@ get_template_part('controllers/single/author-avatar');
 get_template_part('controllers/single/comments');
 get_template_part('controllers/archive/numeric-pagination');
 get_template_part('controllers/header/header-class');
+get_template_part('controllers/sidebar');
 
 get_template_part('controllers/social-links');
 
 get_template_part('partials/breadcrumb');
 get_template_part('partials/single/comment-content');
 
+include_once( get_template_directory().'/shortcodes/beaver-modules/beaver-init.php');
 get_template_part('shortcodes/box-highlight');
 get_template_part('shortcodes/pricing-box');
 

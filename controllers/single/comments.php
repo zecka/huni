@@ -12,15 +12,15 @@ $fields =  array(
 
   'author' =>
     '<p class="comment-form-author">' .
-    ( $req ? '<span class="required">*</span>' : '' ) .
+    ( 1 ? '<span class="required">*</span>' : '' ) .
     '<input id="author" name="author" type="text" placeholder="' .__('Name', HUNI_TEXT_DOMAIN) .
-    '" size="30"' . $aria_req . ' /></p>',
+    '" size="30"' . 1 . ' /></p>',
 
   'email' =>
     '<p class="comment-form-email"> ' .
-    ( $req ? '<span class="required">*</span>' : '' ) .
+    ( 1 ? '<span class="required">*</span>' : '' ) .
     '<input id="email" name="email" type="text" placeholder="' . __('Email', HUNI_TEXT_DOMAIN) .
-    '" size="30"' . $aria_req . ' /></p>',
+    '" size="30"' . 1 . ' /></p>',
 /*
   'url' =>
     '<p class="comment-form-url"><label for="url">' . __( 'Website', 'domainreference' ) . '</label>' .

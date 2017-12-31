@@ -12,7 +12,7 @@ function huni_pricing_box_shortcode($atts , $content = null ){
 		'button_text' => 'Get Started',
 		'button_link' => '#',
 
-	), $atts, 'pricing' ) );
+	), $atts, 'huni-pricing' ) );
 	
 	ob_start();
 	?>
@@ -32,3 +32,4 @@ function huni_pricing_box_shortcode($atts , $content = null ){
 	<?php
 	return ob_get_clean();
 }
+

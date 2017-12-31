@@ -1,8 +1,11 @@
 <?php get_header(); ?>
+<?php global $huni_options; ?>
+
 <div class="container">
 	<div class="row">
+		<?php huni_sidebar('single-left'); ?>
 		<main class="col-9">
-				<?php get_template_part('partials/blog','intro'); ?>
+				<?php // get_template_part('partials/blog','intro'); ?>
 			<div class="article-header-meta">
 					<span class="comments_number">
 						<?php comments_number( 'No comments yet', 'One comment', '% comments' ); ?>
@@ -10,7 +13,6 @@
 					<?php get_template_part('partials/article/social','share'); ?>
 			</div>
 		
-			<h2 class="article-title"><?php the_title(); ?></h2>
 			<div class="article-content">
 				<?php  while ( have_posts() ) : the_post(); ?>
 					<?php the_content(); ?>
@@ -21,13 +23,8 @@
 			<?php comments_template( '', true ); ?>
 			
 		</main>
-		<aside class="col-3">
-			<?php if ( is_active_sidebar( 'sidebar-blog' ) ) : ?>
-				<div id="sidebar">
-					<?php dynamic_sidebar( 'sidebar-blog' ); ?>
-				</div>
-			<?php endif; ?>
-		</aside>
+		<?php huni_sidebar('single-right'); ?>
+		
 		
 	</div>
 </div>
