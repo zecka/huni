@@ -153,56 +153,7 @@ function huni_gmap_shortcode($atts , $content = null ){
 		<div id="huni-mapstyle<?php echo $map_increment; ?>" class="huni-mapstyle"><?php echo $subshortcode['huni-mapstyle'][0]['content'] ?></div>
 		<div id="map<?php echo $map_increment; ?>" class="huni-map-display" style="width:<?php echo $width; ?>; height: <?php echo $height; ?>;"></div>
 	</div> <!-- .huni-map -->
-<!-- <script>
-	  function initMap() {
-			/* Déclaration de l'icône personnalisée */
-			var monIconPerso = new google.maps.MarkerImage("<?php echo get_template_directory_uri() ?>/assets/img/map-marker.png",
-				  /* dimensions de l'image */
-				  new google.maps.Size(34,48),
-				  /* Origine de l'image 0,0. */
-				  new google.maps.Point(0,0),
-				  /* l'ancre (point d'accrochage sur la map) du picto
-				  (varie en fonction de ces dimensions) */
-				  new google.maps.Point(32,64)
-			);
-								
-			var myposition = {lat:<?php echo $huni_options['contact-lat']; ?>, lng: <?php echo $huni_options['contact-lng']; ?>};
-			var yourposition = {lat:40.7311092, lng: -73.9001543};
 
-	        var map = new google.maps.Map(document.getElementById('map'), {
-	          zoom: 10,
-	          center: myposition,
-	          // This is where you would paste any style found on Snazzy Maps.
-			  styles: <?php echo $subshortcode['huni-mapstyle'][0]['content']; ?>
-	    
-	          
-	        });
-	        new google.maps.Marker({
-	          position: myposition,
-	          map: map,
-	          icon: monIconPerso
-	        });
-	        
-	        
-	        <?php foreach($subshortcode['huni-marker'] as $key=>$marker){ ?>    
-			    var marker<?php echo $key; ?> = new google.maps.Marker({
-		          position: {lat: <?php echo $marker['lat'] ?>, lng: <?php echo $marker['lng'] ?>},
-		          map: map,
-		          icon: monIconPerso
-		        });  
-		        
-		        var infowindow<?php echo $key; ?> = new google.maps.InfoWindow({
-		          content: '<?php echo $marker["content"].$key; ?> ',
-		        });
-		        marker<?php echo $key; ?>.addListener('click', function() {
-		          infowindow<?php echo $key; ?>.open(map, marker<?php echo $key; ?>);
-		        });
-		        
-	        <?php } ?>
-	        
-	        
-	  }
-	</script> -->
 
 <?php
 
