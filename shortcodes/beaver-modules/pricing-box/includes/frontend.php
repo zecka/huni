@@ -9,7 +9,7 @@
  
 		
  */
-
+$items=$settings->pricing_items;
 ?>
 
 
@@ -22,5 +22,14 @@
 	button_text="<?php echo $settings->button_text; ?>" 
 	button_link="<?php echo $settings->button_link; ?>"
 ]
-
+<?php if(!empty($items) && $items[0]!=''){
+	echo '<ul>';
+	foreach($items as $item){
+		if($item!=''){
+			echo '<li>'.$item.'</li>';
+		}
+	}
+	echo '</ul>';
+}
+?>
 [/huni-pricing]

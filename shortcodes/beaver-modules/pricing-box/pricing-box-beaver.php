@@ -79,8 +79,20 @@ FLBuilder::register_module('HuniPricingModule', array(
 						'label'			=> __('Button URL', 'fl-builder'),
 						'description'	=> __('The url of the button', 'fl-builder'),
 					),
+			        
 				)
-			)
-		)
+			),
+			'multiple'       => array( // Section
+                'title'         => __('Pricing item', 'fl-builder'), // Section Title
+                'fields'        => array( // Section Fields
+                    'pricing_items'          => array(
+                        'type'          => 'text',
+                        'label'         => __('Pricing item', 'fl-builder'),
+                        'multiple'      => true // Doesn't work with editor or photo fields
+                    )
+                )
+            )
+		),
+		
 	)
 ));

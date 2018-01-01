@@ -73,8 +73,8 @@
 	</div><!-- #wrapper -->
 	<?php wp_footer(); ?>
 	
-	   <script async defer
+	  <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC8T0HTVcIlle6RGgypN8-c-Q6jIr1Q1GA&callback=initMap">
-    </script>
+    </script> 
 </body>
 </html>

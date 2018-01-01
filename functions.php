@@ -24,6 +24,14 @@ if ( !isset( $huni_options ) && file_exists( dirname( __FILE__ ) . '/configs/adm
 }
 
 
+/**
+ *
+ * Require Plugin
+ *
+ *	
+*/
+
+require_once get_template_directory() . '/configs/admin/require-plugins-TGM.php';
 
 
 add_action('wp_enqueue_scripts', 'huni_enqueue_scripts');
@@ -54,6 +62,7 @@ get_template_part('partials/single/comment-content');
 include_once( get_template_directory().'/shortcodes/beaver-modules/beaver-init.php');
 get_template_part('shortcodes/box-highlight');
 get_template_part('shortcodes/pricing-box');
+get_template_part('shortcodes/google-map/google-map');
 
 
 /*********
