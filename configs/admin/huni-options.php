@@ -205,6 +205,12 @@ Redux::setSection($opt_name, array(
 			'default'	=> true,
 		),
 		array(
+			'title'		=> __('Enable Author info in single page'),
+			'id'		=> 'author-info',
+			'type'		=> 'switch',
+			'default'	=> true,
+		),
+		array(
 			'id'		=> 'layout-archive',
 			'type'		=> 'image_select',
 			'title'		=> __( 'Layout Archive', HUNI_TEXT_DOMAIN ),

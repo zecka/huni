@@ -41,6 +41,7 @@ function huni_enqueue_scripts(){
 	wp_enqueue_script('huni-script', get_template_directory_uri().'/assets/js/huni.js', array("jquery"), HUNI_VERSION, true);
 }
 
+get_template_part('configs/post-type/portfolio');
 get_template_part('configs/images');
 get_template_part('configs/excerpt');
 get_template_part('configs/nav');
@@ -53,6 +54,7 @@ get_template_part('controllers/single/comments');
 get_template_part('controllers/archive/numeric-pagination');
 get_template_part('controllers/header/header-class');
 get_template_part('controllers/sidebar');
+get_template_part('controllers/helpers');
 
 get_template_part('controllers/social-links');
 

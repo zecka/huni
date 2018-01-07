@@ -92,7 +92,7 @@ section{
 }
 
 .block-diagonal{
-	background-color: $dark-blue;
+	background-color: $primary-dark;
 	padding-top: 20px;
 	padding-bottom: 100px;
 	&::after{
@@ -208,15 +208,7 @@ img.size-large{
 		border-radius: 0;
 		padding: 0.625em 1.250em;
 	}
-	&.gray{
-		background-color: #e5e4e4;
-		border: 1px solid #e5e4e4;
-		color: #696969;
-		&:hover{
-			background-color: $primary-color;
-			color: #fff;
-		}
-	}
+	
 	
 	&.btn-icon{
 		position: relative;
@@ -248,14 +240,43 @@ img.size-large{
 			background-size: contain;
 		}
 	}
-}
-.button.secondary{
-	border-color: $secondary-color;
-	background-color: $secondary-color;
-	&:hover{
-		color: $secondary-color;
+	
+	// COLORS
+	
+	&.white{
+		background-color: #fff;
+		border: 1px solid #fff;
+		color: #000;
+		&:hover{
+			background-color: #000;
+			color: #fff;
+		}
+	}
+	&.gray{
+		background-color: #e5e4e4;
+		border: 1px solid #e5e4e4;
+		color: #696969;
+		&:hover{
+			background-color: $primary-color;
+			color: #fff;
+		}
+	}
+	&.secondary{
+		border-color: $secondary-color;
+		background-color: $secondary-color;
+		&:hover{
+			color: $secondary-color;
+		}
+	}
+	&.primarydark{
+		border-color: $primary-dark;
+		background-color: $primary-dark;
+		&:hover{
+			color: $primary-dark;
+		}
 	}
 }
+
 
 .button.alt{
 	color: $primary-color;
@@ -264,14 +285,38 @@ img.size-large{
 		background-color: $primary-color;
 		color: #fff;
 	}
-}
-.button.alt.secondary{
-	color: $secondary-color;
-	&:hover{
-		background-color: $secondary-color;
+	
+	&.white{
 		color: #fff;
+		&:hover{
+			background-color: #fff;
+			color: #000;
+		}
+	}
+	
+	&.secondary{
+		color: $secondary-color;
+		&:hover{
+			background-color: $secondary-color;
+			color: #fff;
+		}
+	}
+	&.primarydark{
+		color: $primary-dark;
+		&:hover{
+			background-color: $primary-dark;
+			color: #fff;
+		}
+	}
+	&.white{
+		color: #fff;
+		&:hover{
+			background-color: #fff;
+			color: #000;
+		}
 	}
 }
+.button.alt
 .button, 
 .inverted .button{
 	&.black{
@@ -294,7 +339,7 @@ img.size-large{
 		color: #fff;
 	}
 	.button{
-		color: $dark-blue;
+		color: $primary-dark;
 		background-color: #fff;
 		border-color: #fff;
 		&:hover{
@@ -308,7 +353,7 @@ img.size-large{
 		background-color: transparent;
 		border-color: #fff;
 		&:hover{
-			color: $dark-blue;
+			color: $primary-dark;
 			background-color: #fff;
 		
 		}
@@ -331,5 +376,68 @@ img.size-large{
 }
 
 
+/* ------------------
+	   COLORS
+------------------ */
+.bg-primary{
+	background-color: $primary-color;
+}
+.bg-secondary{
+	background-color: $secondary-color;
+}
+.bg-primarydark{
+	background-color: $primary-dark;
+}
+.bg-white{
+	background-color: #fff;
+}
+.bg-black{
+	background-color: #000;
+}
+.bg-gray{
+	background-color: $light-gray;
+}
 
-
+.txt-default{
+	color: $text-color;
+	h1,h2,h3,h4,h5,h6{
+		color: $title-color;
+	}
+}
+.txt-primary{
+	color: $primary-color;
+	h1,h2,h3,h4,h5,h6{
+		
+	}
+}
+.txt-secondary{
+	color: $secondary-color;
+	h1,h2,h3,h4,h5,h6{
+		color: $secondary-color;
+	}
+}
+.txt-primarydark{
+	color: $primary-dark;
+	h1,h2,h3,h4,h5,h6{
+		color: $primary-dark;
+	}
+}
+.txt-white{
+	color: #fff;
+	h1,h2,h3,h4,h5,h6{
+		color: #fff;
+	}
+}
+.txt-black{
+	color: #000;
+	h1,h2,h3,h4,h5,h6{
+		color: #000;
+	}
+	
+}
+.txt-gray{
+	color: $light-gray;
+	h1,h2,h3,h4,h5,h6{
+		color: $light-gray;
+	}
+}

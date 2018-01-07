@@ -11,12 +11,18 @@ function huni_pricing_box_shortcode($atts , $content = null ){
 		'after_price' => '',
 		'button_text' => 'Get Started',
 		'button_link' => '#',
+		'bg_color'	=> 'bg-white',
+		'txt_color'	=> 'txt-default',
+		'bullet_color' => 'secondary',
+		'button_color' => 'secondary',
+
+
 
 	), $atts, 'huni-pricing' ) );
 	
 	ob_start();
 	?>
-	<div class="pricing-wrap">
+	<div class="pricing-wrap <?php echo $bg_color; ?> <?php echo $txt_color; ?> bullet-<?php echo $bullet_color; ?>">
 		<div class="princing-box">
 			<h4 class="text-center"><?php echo $title; ?></h4>
 			<div class="price text-center">
@@ -25,7 +31,7 @@ function huni_pricing_box_shortcode($atts , $content = null ){
 			<p><?php echo $description; ?></p>
 			<?php echo $content; ?>
 			
-			<a href="<?php echo $button_link ?>" class="button alt secondary"><?php echo $button_text; ?></a>
+			<a href="<?php echo $button_link ?>" class="button alt <?php echo $button_color ?>"><?php echo $button_text; ?></a>
 			
 		</div>
 	</div>

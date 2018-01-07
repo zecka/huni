@@ -22,7 +22,6 @@
 .pricing-wrap{
 	
 	.princing-box{
-		background-color: #efefef;
 		position: relative;
 		overflow: hidden;
 		padding: 45px;
@@ -35,7 +34,6 @@
 	.price{
 		font-weight: bold;
 		font-size: 2.188em;
-		color: #000;
 	}
 	ul{
 		list-style: none;
@@ -55,20 +53,40 @@
 		}
 	}
 }
-.inverted{
-	.princing-box{
-		background-color: #fff;
-		color: $text-color;
-		.button.alt.secondary{
-			color: $secondary-color;
-			border-color: $secondary-color;
-			&:hover{
-				background-color: $secondary-color;
-				color: #fff;
-			}
-		}
-		h4{
+.pricing-wrap{
+	&.txt-default{
+		.price{
 			color: $title-color;
+		}
+	}
+	&.bullet-white{
+		ul li:before{
+			color: #fff;
+		}
+	}
+	&.bullet-gray{
+		ul li:before{
+			color: $light-gray;
+		}
+	}
+	&.bullet-black{
+		ul li:before{
+			color: #000;
+		}
+	}
+	&.bullet-primary{
+		ul li:before{
+			color: $primary-color;
+		}
+	}
+	&.bullet-secondary{
+		ul li:before{
+			color: $secondary-color;
+		}
+	}
+	&.bullet-primarydark{
+		ul li:before{
+			color: $primary-dark;
 		}
 	}
 }

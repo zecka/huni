@@ -21,6 +21,11 @@ $items=$settings->pricing_items;
 	after_price="<?php echo $settings->after_price; ?>" 
 	button_text="<?php echo $settings->button_text; ?>" 
 	button_link="<?php echo $settings->button_link; ?>"
+	bg_color="<?php echo $settings->bg_color; ?>"
+	txt_color="<?php echo $settings->txt_color; ?>"
+	bullet_color="<?php echo $settings->bullet_color; ?>"
+	button_color="<?php echo $settings->button_color; ?>"
+
 ]
 <?php if(!empty($items) && $items[0]!=''){
 	echo '<ul>';

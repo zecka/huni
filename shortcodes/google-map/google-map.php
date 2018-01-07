@@ -53,7 +53,7 @@ function huni_gmap_shortcode($atts , $content = null ){
 		'lng'		=> false,
 		'width'		=> '100%',
 		'height'	=> '400px',
-
+	
 	), $atts, 'huni-gmap' ) );
 	
 	wp_enqueue_script('huni-gmap');
@@ -68,6 +68,8 @@ function huni_gmap_shortcode($atts , $content = null ){
 	ob_start();
 	huni_map_increment();
 	$map_increment=ob_get_clean();
+	
+	
 	
 	// MAP SUB SHORTCODE
 	$subshortcode=huni_shortcode_map($content);
@@ -87,11 +89,14 @@ function huni_gmap_shortcode($atts , $content = null ){
 	 
 	 
 	ob_start();
-	echo '<pre>';
-    echo print_r(huni_shortcode_map($content));
-	echo '</pre>';
-  	//echo do_shortcode($content);
 
+	?>
+	<style>
+		.huni-map-setting{
+			display: none;
+		}
+	</style>
+	<?
 	
 	echo '<div class="huni-map"
 				data-lng="'.$lng.'" 
@@ -126,13 +131,35 @@ function huni_gmap_shortcode($atts , $content = null ){
 			if(array_key_exists('icon-height', $marker)){
 				$icon_height=$marker['icon-height'];
 			}
-			$anchor_x=$icon_width/2;
-			$anchor_y=$icon_height;
-			if(array_key_exists('anchor-x', $marker)){
-				$anchor_x=$marker['anchor-x'];
+			
+			$anchor_x_px=$icon_width/2;
+			$anchor_y_px=$icon_height;
+			
+			if(array_key_exists('anchor_x', $marker)){
+				switch($marker['anchor_x']){
+					case 'left':
+						$anchor_x=0;
+					break;
+					case 'center':
+						$anchor_x=$icon_width/2;
+					break;
+					case 'right':
+						$anchor_x=$icon_width;
+					break;
+				}
 			}
-			if(array_key_exists('anchor-y', $marker)){
-				$anchor_y=$marker['anchor-y'];
+			if(array_key_exists('anchor_y', $marker)){
+				switch($marker['anchor_y']){
+					case 'top':
+						$anchor_y=0;
+					break;
+					case 'center':
+						$anchor_y=$icon_height/2;
+					break;
+					case 'bottom':
+						$anchor_y=$icon_height;
+					break;
+				}
 			}
 
 			echo '<div class="huni-marker huni-map-setting"
@@ -142,15 +169,16 @@ function huni_gmap_shortcode($atts , $content = null ){
 					data-icon="'.$icon.'"
 					data-icon-width="'.$icon_width.'" 
 					data-icon-height="'.$icon_height.'"
-					data-anchor-x="'.$anchor_x.'" 
-					data-anchor-y="'.$anchor_y.'"
+					data-anchor_x="'.$anchor_x.'" 
+					data-anchor_y="'.$anchor_y.'"
 			>';
 			echo $marker['content'];
 			
 			echo'</div>';
 		}
 		?>
-		<div id="huni-mapstyle<?php echo $map_increment; ?>" class="huni-mapstyle"><?php echo $subshortcode['huni-mapstyle'][0]['content'] ?></div>
+		
+		<div id="huni-mapstyle<?php echo $map_increment; ?>" class="huni-mapstyle huni-map-setting"><?php echo $subshortcode['huni-mapstyle'][0]['content'] ?></div>
 		<div id="map<?php echo $map_increment; ?>" class="huni-map-display" style="width:<?php echo $width; ?>; height: <?php echo $height; ?>;"></div>
 	</div> <!-- .huni-map -->
 
@@ -218,3 +246,5 @@ function huni_map_increment()
 
     $counter++;
 }
+
+require('example.php');

@@ -4,12 +4,10 @@
 <div class="container">
 	<div class="row">
 		<?php huni_sidebar('single-left'); ?>
-		<main class="col-9">
+		<main class="<?php huni_main_class(); ?>">
 				<?php // get_template_part('partials/blog','intro'); ?>
 			<div class="article-header-meta">
-					<span class="comments_number">
-						<?php comments_number( 'No comments yet', 'One comment', '% comments' ); ?>
-					</span>
+					
 					<?php get_template_part('partials/article/social','share'); ?>
 			</div>
 		
@@ -18,7 +16,11 @@
 					<?php the_content(); ?>
 				<?php endwhile; ?>
 			</div>
-			<?php get_template_part('partials/single/author'); ?>
+			<?php 
+			if($huni_options['author-info']==true){
+				 get_template_part('partials/single/author');
+			}
+			 ?>
 			
 			<?php comments_template( '', true ); ?>
 			

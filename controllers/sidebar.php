@@ -28,10 +28,11 @@ function huni_sidebar($position='single-left'){
 		}
 	}
 	else{
+			$active_position=array();
+
 		// DO NOT DISPLAY SIDEBAR
 	}
 	
-	echo $huni_options['layout-'.$page];
 	
 		
 	if(in_array($position, $active_position)){
@@ -45,4 +46,27 @@ function huni_sidebar($position='single-left'){
 		</aside>
 	<?php
 	}
+}
+
+function huni_main_class(){
+	
+		global $huni_options;
+	$sidebar='sidebar-blog';
+	
+	$page=huni_get_current_layout();
+
+
+	
+	if($huni_options['layout-'.$page]=='two-sidebar'){
+		$main_class="col-6";
+	}elseif($huni_options['layout-'.$page]=='no-sidebar'){
+		$main_class="col-12";
+	}
+	else{
+		// DO NOT DISPLAY SIDEBAR
+		$main_class="col-9";
+
+	}
+	
+	echo $main_class;
 }

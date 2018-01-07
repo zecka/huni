@@ -10,7 +10,13 @@ function huni_register_required_plugins() {
 				'name'      => 'Google Maps module for Beaver Builder',
 				'slug'      => 'beaver-builder-googlemaps',
 				'source'    => 'https://github.com/thierrypigot/beaver-builder-googlemaps/archive/master.zip',
-			),
+		),
+		array(
+				'name'      => 'Meta Box',
+				'slug'      => 'meta-box',
+				'required'  => true,
+
+		),
 	);
 	
 	$config = array(

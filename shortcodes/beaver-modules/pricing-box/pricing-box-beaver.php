@@ -79,6 +79,58 @@ FLBuilder::register_module('HuniPricingModule', array(
 						'label'			=> __('Button URL', 'fl-builder'),
 						'description'	=> __('The url of the button', 'fl-builder'),
 					),
+					'bg_color'		=> array(
+						'type'			=> 'select',
+						'label'			=>__('Background Color', 'fl-builder'),
+						'options'		=> array(
+							'bg-primary'		=> __('Primary Color', HUNI_TEXT_DOMAIN),
+							'bg-secondary' 	=> __('Secondary Color', HUNI_TEXT_DOMAIN),
+							'bg-primarydark'	=> __('Primary Dark Color', HUNI_TEXT_DOMAIN),
+							'bg-white'			=> __('White', HUNI_TEXT_DOMAIN),
+							'bg-black'			=> __('Black', HUNI_TEXT_DOMAIN),
+							'bg-gray'			=> __('Light Gray', HUNI_TEXT_DOMAIN),
+
+
+						),
+						'default'		=> 'bg-primary',
+					),
+					'txt_color'	=> array(
+						'type'		=> 'select',
+						'label'		=> __('Text Color', HUNI_TEXT_DOMAIN),
+						'options'	=> array(
+							'txt-default'		=> __('Default text color', HUNI_TEXT_DOMAIN),
+							'txt-primary'		=> __('Primary Color', HUNI_TEXT_DOMAIN),
+							'txt-secondary' 	=> __('Secondary Color', HUNI_TEXT_DOMAIN),
+							'txt-primarydark'	=> __('Primary Dark Color', HUNI_TEXT_DOMAIN),
+							'txt-white'			=> __('White', HUNI_TEXT_DOMAIN),
+							'txt-black'			=> __('Black', HUNI_TEXT_DOMAIN),
+							'txt-gray'			=> __('Light Gray', HUNI_TEXT_DOMAIN),
+
+						),
+						'default'	=> 'txt-white',
+					),
+					'button_color'	=> array(
+						'type'		=> 'select',
+						'label'		=> __('button color', HUNI_TEXT_DOMAIN),
+						'options'	=> array(
+							'primary'		=> __('Primary Color', HUNI_TEXT_DOMAIN),
+							'secondary' 	=> __('Secondary Color', HUNI_TEXT_DOMAIN),
+							'white'			=> __('White', HUNI_TEXT_DOMAIN),
+							'black'			=> __('Black', HUNI_TEXT_DOMAIN),
+						),
+						'default' => 'white' 
+					),
+					'bullet_color'	=> array(
+						'type'		=> 'select',
+						'label'		=> __('Bullet point color', HUNI_TEXT_DOMAIN),
+						'options'	=> array(
+							'primary'		=> __('Primary Color', HUNI_TEXT_DOMAIN),
+							'secondary' 	=> __('Secondary Color', HUNI_TEXT_DOMAIN),
+							'white'			=> __('White', HUNI_TEXT_DOMAIN),
+							'black'			=> __('Black', HUNI_TEXT_DOMAIN),
+						),
+						'default' => 'white' 
+					)
 			        
 				)
 			),

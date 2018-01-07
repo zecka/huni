@@ -51,6 +51,10 @@
 				                the_title();
 				                rewind_posts();
 				            }
+				        }elseif(is_category()){
+							single_cat_title( '', true );
+				        }elseif(is_post_type_archive()){
+					        post_type_archive_title();
 				        }else{
 					        the_title();
 				        }

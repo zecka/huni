@@ -15,9 +15,17 @@ function huni_breadcrumb() {
         echo '</a>' . $sep;
 	
 	// Check if the current page is a category, an archive or a single page. If so show the category or archive name.
-        if (is_category() || is_single() ){
-            the_category(', ');
-        } elseif (is_archive() || is_single()){
+        if (is_single() ){
+	        if( is_singular( 'portfolio' )){
+            	echo '<a href="'.get_post_type_archive_link('portfolio').'">Portfolio</a>';
+			}else{
+				the_category(', ');
+			}
+        }elseif(is_category()){
+			single_cat_title( '', true );
+        }elseif(is_post_type_archive()){
+	        post_type_archive_title();
+        }elseif (is_archive() || is_single()){
             if ( is_day() ) {
                 printf( __( '%s', HUNI_TEXT_DOMAIN ), get_the_date() );
             } elseif ( is_month() ) {

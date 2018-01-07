@@ -21,6 +21,12 @@
 						color: $primary-color;
 					}
 				}
+				&.current-cat a{
+					color: $primary-color;
+					&:hover{
+						color: #000;
+					}
+				}
 			}
 		}
 	}
@@ -50,3 +56,4 @@
 		}
 	}
 }
+

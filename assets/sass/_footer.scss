@@ -41,7 +41,7 @@
 
 }
 #demo{
-	background-color: $dark-blue;
+	background-color: $primary-dark;
 
 }
 
@@ -89,8 +89,8 @@ footer{
 			text-align: center;
 			line-height: 38px;
 			&:hover{
-				background-color: $dark-blue;
-				border-color: $dark-blue;
+				background-color: $primary-dark;
+				border-color: $primary-dark;
 				color: #fff;
 			}
 			@include breakpoint(phone) {
@@ -132,7 +132,7 @@ footer{
 		}
 	}
 	.copyright{
-		background-color: $dark-blue;
+		background-color: $primary-dark;
 		padding: 45px;
 	}
 	.social-links{
