@@ -1,4 +1,11 @@
 #sidebar{
+	&>:first-child{
+		margin-top: 0;
+		h4{
+			margin-top: 0;
+		}
+
+	}
 	@include breakpoint(phone) {
 		text-align: center;
 	}

@@ -196,6 +196,9 @@ img.size-large{
 	border: 1px solid $primary-color;
 	background-color: $primary-color;
 	color: #fff;
+	&.icon{
+		padding: 0.625em .8em;
+	}
 	&:hover{
 		background-color: transparent;
 		color: $primary-color;
@@ -329,6 +332,7 @@ img.size-large{
 	}
 	
 }
+
 /* ------------------
 	   INVERTED
 ------------------ */

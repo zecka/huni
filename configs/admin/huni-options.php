@@ -165,6 +165,16 @@ Redux::setSection($opt_name, array(
 	'subsection'	=> true,
 	'fields'		=>array(
 		array(
+			'title'		=> __('Header type', HUNI_TEXT_DOMAIN),
+			'id'		=> 'header-type',
+			'type'		=> 'select',
+			'options'	=> array(
+				'default' 	=> __('Default', HUNI_TEXT_DOMAIN),
+				'left'		=>__('Left', HUNI_TEXT_DOMAIN),
+			),
+			'default'	=> 'default',	
+		),
+		array(
 			'title'		=> __('Logo width', HUNI_TEXT_DOMAIN),
 			'id'		=> 'logo-width',
 			'type'		=> 'text',
@@ -192,6 +202,27 @@ Redux::setSection($opt_name, array(
 	'id'			=> 'basic-blog',
 	'subsection'	=> true,
 	'fields'		=> array(
+		array(
+			'title'		=> __('Enable Blog introduction texte'),
+			'id'		=> 'enable-blog-intro',
+			'type'		=> 'switch',
+			'default'	=> true,
+		),
+		array(
+			'title'		=> __('Blog intro title', HUNI_TEXT_DOMAIN),
+			'id'		=> 'blog-intro-title',
+			'type'		=> 'text',
+			'default'	=> 'A blog about good food',
+			'required' => array( 'enable-blog-intro', '=', '1' ),
+		),
+		array(
+			'title'		=> __('Blog Intro', HUNI_TEXT_DOMAIN),
+			'descrition' => __('A small description of your blog on the top of archive page and blog page', HUNI_TEXT_DOMAIN),
+			'id'		=> 'blog-intro',
+			'type'		=> 'textarea',
+			'default'	=> 'Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Cras ultricies ligula sed magna dictum porta. Vivamus suscipit tortor eget felis porttitor volutpat. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Donec rutrum congue leo eget malesuada.',
+			'required' => array( 'enable-blog-intro', '=', '1' ),
+		),
 		array(
 			'title'		=> __('Enable Social Share on single page'),
 			'id'		=> 'social-share-single',

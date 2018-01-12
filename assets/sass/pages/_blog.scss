@@ -1,8 +1,6 @@
 .blog-intro{
 
-	margin-top: 130px;
-	
-	margin-bottom: 115px;
+	margin-bottom: 100px;
 	h2{
 		font-size: 1.375em;
 		color: $primary-color;
@@ -15,6 +13,7 @@
 	}
 }
 .articles-list{
+
 	article{
 		margin-bottom: 60px;
 		@include breakpoint(phone) {
@@ -84,8 +83,12 @@
 
 	}
 }
-.social-like.flex .btn-social + .btn-social{
-	margin-left: 10px;
+
+.social-like{
+	margin-top: 40px;
+	.btn-social + .btn-social{
+		margin-left: 10px;
+	}
 }
 .btn-social{
 	display: inline-block;

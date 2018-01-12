@@ -48,11 +48,15 @@ get_template_part('configs/nav');
 get_template_part('configs/sidebar');
 get_template_part('configs/beaver/beaver-settings');
 get_template_part('configs/beaver/beaver-helpers');
+get_template_part('configs/admin/custom-fields/portfolio-fields');
 
 get_template_part('controllers/single/author-avatar');
 get_template_part('controllers/single/comments');
 get_template_part('controllers/archive/numeric-pagination');
 get_template_part('controllers/header/header-class');
+get_template_part('controllers/header/ajax-search');
+get_template_part('controllers/header/nav-walker');
+
 get_template_part('controllers/sidebar');
 get_template_part('controllers/helpers');
 

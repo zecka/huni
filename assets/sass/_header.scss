@@ -14,6 +14,13 @@
 		height: 100%;
 	}
 }
+.logo-mobile{
+	display: none;
+	float: left;
+	@include breakpoint(phone) {
+		display: block;
+	}
+}
 .logo.black{
 	color: #000;
 }
@@ -32,53 +39,66 @@ header{
 		width: 100%;
 		&.sticky{
 			background-color: rgba(0, 0, 0, 0.7);
-			position: fixed !important;
+			position: fixed;
 			top: 0;
 			z-index: 90;
 			padding: 20px 0;
-			@include breakpoint(sm-up){
-				.secondary_nav .button:not(.alt),
-				.secondary_nav .button.alt:hover{
-					color: #000;
+			&.open{
+				position: static;
+			}
+			
+			@include breakpoint(tablette) {
+				.header-flex{
+					flex-direction: row;
 				}
-				.secondary_nav .button:not(.alt):hover{
-					color: #fff;
+				ul{
+					padding: 0;
+					margin: 0;
+				}
+				.logo{
+					display: none;
+				}
+				.secondary_nav{
+					position: static;
+					a{
+						display: none;
+					}
+					a.huni-search{
+						display: block;
+					}
 				}
 			}
-		}
-	}
 
-	.logo{
-		//icon: 45x42px logo width: 118px
-		float: left;
-		@include breakpoint(tablette) {
-			float: none;
-			margin: auto;
+
 		}
 		
 	}
+
+	.logo{
+		@include breakpoint(tablette) {
+			margin: 0 0 20px;
+		}
+
+	}
 	nav.primary{
-		float: left;
-		width: calc(100% - (118px + 240px));
 		line-height: 0.7em;
 		text-align: center;
-		@include breakpoint(tablette) {
-			float: none;
-			width: 100%;
-			margin-top: 50px;
-		}
+
 	}
 	.secondary_nav{
-		width: 240px;
-		float: right;
 		@include breakpoint(tablette) {
 			position: absolute;
 			top: 40px;
 			right: 40px;
 		}
 	}
-	a{
-		color: #fff;
+	&.inverted{
+		a{
+			color: #fff;
+		}
+	}
+	.fa-search{
+		margin-left: 20px;
 	}
 }
 nav{
@@ -118,6 +138,7 @@ nav{
 		}
 	}
 	&.active{
+		z-index: 55;
 		span{
 			background-color: $primary-color;
 			&:first-child{
@@ -133,9 +154,15 @@ nav{
 	}
 	
 }
-.navs-wrap{
+.header-flex{
 	transition: all .3s ease-in-out;
+	display: flex;
+	justify-content: space-between;
+	@include breakpoint(md-down) {
+		flex-direction: column;
+	}
 	@include breakpoint(phone) {
+		display: block;
 		min-height: 100vh;
 		background-color: #fff;
 		position: absolute;
@@ -145,6 +172,7 @@ nav{
 		transform: translateY(-100%);
 		&.active{
 			transform: translateY(0%);
+			z-index: 50;
 		}
 		nav.primary{
 			margin-top: 80px;
@@ -183,7 +211,11 @@ nav .menu {
 			border-top-color: #fff;
 			position: relative;
 			top: 1px;
-		}	
+			@include breakpoint(phone) {
+				display: none;
+			}
+		}
+	
 	}
 	.sub-menu{
 		opacity: 0;
@@ -209,6 +241,21 @@ nav .menu {
 				background-color: $light-gray;
 			}
 		}
+		@include breakpoint(phone) {
+			position: static;
+			opacity: 1;
+			text-align: center;
+			box-shadow: none;
+			margin-top: 5px;
+			li{
+				display: block;
+				padding: 0 5px;
+				font-size: .7em;
+				&+li{
+					border-top: none;
+				}
+			}
+		}
 	}
 	&>li{
 		&:hover{
@@ -221,14 +268,187 @@ nav .menu {
 	}
 }
 
+/*-----------------------------
+		MODAL SEARCH
+------------------------------ */
+.huni-modal-search{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	display: none;
+	background-color: rgba(255, 255, 255, 0.95);
+	z-index: 90;
+	display: none;
+	.modal-search-content{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		min-width: 600px;
+	}
+	.close{
+		position: absolute;
+		right: 30px;
+		top: 40px;
+		width: 39px;
+		height: 29px;
+		cursor: pointer;
+		display: block;
+		transition: all .3s ease-in-out;
+		&::before,
+		&::after{
+			content: "";
+			transform: rotateZ(42deg);
+			position: absolute;
+			display: block;
+			width: 100%;
+			height: 3px;
+			background-color: #000;
+			top: 13px;
+		}
+		&::after{
+			transform: rotateZ(-42deg);
+		}
+		&:hover{
+			opacity: .5;
+			transform: rotateZ(180deg);
+		}
+	}
+	.searchform{
+		input{
+			border-radius: 0;
+			background-color: transparent;
+			border: 0;
+			border-bottom: 2px solid #000;
+			color: #000;
+			min-width: 80%;
+			display: block;
+			font-size: 2em;
+			transition: all .2s ease-in-out;
+			padding: .3em 0;
+			&:focus{
+				box-shadow: none;
+				border-bottom: 4px solid #000;
+			}
+		}
+		i{
+			font-size: 2.5em;
+			color: #000;
+		}
+	}
+}
 
+
+body.header-type-left{
+	#wrapper{
+		padding-left: 300px;
+		position: relative;
+	}
+	header{
+		position: absolute;
+		height: 100%;
+		width: 300px;
+		left: 0;
+		bottom: 0;
+		top: 0;
+		background-color: $header-background;
+		box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.1);
+	}
+	.header-flex{
+		display: block;
+	}
+	.logo{
+		margin: auto;
+	}
+	nav.primary{
+		ul{
+			padding: 0;
+			li{
+				display: block;
+				margin: 0;
+				padding: 1em 0;
+				font-size: 1.2em;
+				&+li{
+					border-top: 1px solid rgba($primary-color, 0.1);
+				}
+			}
+			
+			.sub-menu{
+				position: static;
+				opacity: 1;
+				text-align: center;
+				box-shadow: none;
+				margin-top: 5px;
+				background-color: transparent;
+				transition: all .3s ease-in-out;
+				margin-top: 20px;
+				display: none;
+
+				&.active{
+
+				}
+				a:hover{
+					color: $primary-color;
+				}
+				li{
+					display: block;
+					padding: 0 5px;
+					font-size: .85em;
+					background-color: transparent;
+					&+li{
+						border-top: none;
+					}
+				}
+			}
+		}
+	}
+	.secondary_nav{
+		position: static;
+		text-align: center;
+	}
+	
+}
+
+$padding-button:0px;
+.huni-open-toggle{
+	height: 11px;
+	width: 11px;
+	box-sizing: content-box;
+	padding: $padding-button;
+	border-radius: 20px;
+	//border: 1px solid #000;
+	display: inline-block;
+	margin-left: 10px;
+	margin-top: 1px;
+	position: absolute;
+	
+	&::before,
+	&::after{
+		content: "";
+		display: block;
+		position: absolute;
+	}
+	&::before{
+		bottom: $padding-button;
+		top: $padding-button;
+		left: 5px + $padding-button;
+		border-left: 1px solid #000;
+	}
+	&::after{
+		top: 5px + $padding-button;
+		left: $padding-button;
+		right: $padding-button;
+		border-bottom: 1px solid #000;
+	}
+}
 /* ----------------------------
 	    PAGE TITLE HEADER 
 ---------------------------- */
 #pageTitle{
 	background-color: $light-gray;
 	padding: 100px 0 30px;
-}
-.single #pageTitle{
 	margin-bottom: 100px;
+
 }

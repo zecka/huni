@@ -15,9 +15,6 @@ function huni_pricing_box_shortcode($atts , $content = null ){
 		'txt_color'	=> 'txt-default',
 		'bullet_color' => 'secondary',
 		'button_color' => 'secondary',
-
-
-
 	), $atts, 'huni-pricing' ) );
 	
 	ob_start();

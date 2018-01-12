@@ -28,7 +28,7 @@
 </section>
 
 	<footer>
-		<div class="container-8 newsletter">
+		<div class="container-8 newsletter clearfix">
 			<input type="email" placeholder="Type your email" /><button class="button" >SUBSCRIBE</button>
 		</div>
 		<div class="container">

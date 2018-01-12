@@ -11,30 +11,40 @@
 	<?php wp_head(); ?>
 	<?php global $huni_options; ?>
 </head>
-
+<?php 
+	if($huni_options['header-type']=='left'){
+		$logo_variant='dark';
+	}else{
+		$logo_variant='light';
+	}
+?>
 <body <?php body_class(); ?>>
 	<div id="wrapper">
 		<header <?php huni_header_class(); ?>>
 			<div class="header-wrap">
 				<div class="container clearfix">
-					<a class="logo" href="<?php echo home_url(); ?>">
-						<img src="<?php echo $huni_options['logo-light']['url']; ?>" />
+					<a class="logo logo-mobile" href="<?php echo home_url(); ?>">
+						<img src="<?php echo $huni_options['logo-'.$logo_variant]['url']; ?>" />
 					</a>
+					<div class="header-flex">
+						<a class="logo" href="<?php echo home_url(); ?>">
+							<img src="<?php echo $huni_options['logo-'.$logo_variant]['url']; ?>" />
+						</a>
+						<nav class="primary">
+							
+							<?php wp_nav_menu( array( 'menu' =>'primary', 'container' => false, 'walker' => new Huni_Nav_Walker()) ); ?>
+						</nav>
+						<nav class="secondary_nav">
+							<a href="#" class="button">Shop</a>
+							<a href="#" class="button alt">Login</a>
+							<?php echo huni_ajax_search(); ?>
+						</nav>
+					</div>
 					<a class="hamburger-menu">
 						<span></span>
 						<span></span>
 						<span></span>
 					</a>
-					<div class="navs-wrap">
-						<nav class="primary">
-							
-							<?php wp_nav_menu( array( 'menu' =>'primary', 'container' => false) ); ?>
-						</nav>
-						<nav class="secondary_nav">
-							<a href="#" class="button">Shop</a>
-							<a href="#" class="button alt">Login</a>
-						</nav>
-					</div>
 				</div>
 			</div>
 		</header>
