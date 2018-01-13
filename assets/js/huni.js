@@ -15,7 +15,7 @@
 		
 		$('.huni-open-toggle').click(function(e){
 			e.preventDefault();
-			$(this).closest('li').find('.sub-menu').toggleClass('active');
+			//$(this).closest('li').find('.sub-menu').toggleClass('active');
 			$(this).closest('li').find('.sub-menu').slideToggle("slow");
 			$(this).toggleClass('active');
 		});
