@@ -3,6 +3,10 @@
 define( 'HUNI_VERSION', wp_get_theme()->get( 'Version' ) );
 define( 'HUNI_TEXT_DOMAIN', 'huni' );
 
+add_action('init', 'test_init');
+function test_init(){
+	error_log('init');
+}
 
 /*
  * Load Redux Frameweok
@@ -23,6 +27,8 @@ if ( !isset( $huni_options ) && file_exists( dirname( __FILE__ ) . '/configs/adm
 
 }
 
+		
+
 
 /**
  *
@@ -39,9 +45,14 @@ function huni_enqueue_scripts(){
 	wp_enqueue_style('main', get_template_directory_uri().'/assets/css/style.css', '', HUNI_VERSION);
 	wp_enqueue_style( 'load-fa', get_template_directory_uri().'/assets/fontawesome/css/font-awesome.min.css', '', '4.7.0');
 	wp_enqueue_script('huni-script', get_template_directory_uri().'/assets/js/huni.js', array("jquery"), HUNI_VERSION, true);
+	wp_enqueue_style('fancybox', get_stylesheet_directory_uri().'/assets/fancybox/jquery.fancybox.min.css', '', HUNI_VERSION);
+	wp_enqueue_script('fancybox', get_stylesheet_directory_uri().'/assets/fancybox/jquery.fancybox.min.js', array('jquery'), HUNI_VERSION, true);
+
 }
 
 get_template_part('configs/post-type/portfolio');
+get_template_part('configs/post-type/partners');
+
 get_template_part('configs/images');
 get_template_part('configs/excerpt');
 get_template_part('configs/nav');
@@ -49,6 +60,7 @@ get_template_part('configs/sidebar');
 get_template_part('configs/beaver/beaver-settings');
 get_template_part('configs/beaver/beaver-helpers');
 get_template_part('configs/admin/custom-fields/portfolio-fields');
+get_template_part('configs/admin/custom-fields/options-page');
 
 get_template_part('controllers/single/author-avatar');
 get_template_part('controllers/single/comments');
@@ -62,6 +74,8 @@ get_template_part('controllers/helpers');
 
 get_template_part('controllers/social-links');
 
+
+
 get_template_part('partials/breadcrumb');
 get_template_part('partials/single/comment-content');
 
@@ -69,6 +83,14 @@ include_once( get_template_directory().'/shortcodes/beaver-modules/beaver-init.p
 get_template_part('shortcodes/box-highlight');
 get_template_part('shortcodes/pricing-box');
 get_template_part('shortcodes/google-map/google-map');
+get_template_part('shortcodes/portfolio-gallery');
+
+
+get_template_part('widgets/huni-recent-comment');
+get_template_part('widgets/huni-about');
+
+
+
 
 
 /*********

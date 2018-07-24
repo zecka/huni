@@ -1,0 +1,29 @@
+.huni_recent_comments {
+	padding: 0;
+	.recent-comment-wrapper{
+		display: flex;
+		.recent_comment{
+			margin-bottom: 30px;
+		}
+		.comment_gravatar{
+			flex: 0 0 70px;
+			float: left;
+			display: block;
+		}
+		.comment_author{
+			text-transform: uppercase;
+			color: $primary-color;
+			font-weight: bold;
+			margin-bottom: 3px;
+		}
+		span{
+			text-transform: none;
+			font-style: italic;
+			font-weight: lighter;
+			color: $text-color;
+		}
+		.comment-article{
+			margin-top: 3px;
+		}
+	}
+}

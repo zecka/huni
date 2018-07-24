@@ -2,7 +2,7 @@
 body{
 	font-size: 16px;
 	font-family: $primary-font;
-	font-weight: 300;
+	font-weight: $primary-font-weight;
 		-webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     color: $text-color;
@@ -21,7 +21,7 @@ button{
 h1,h2,h3,h4,h5{
 	color: #000;
 	font-family: $title-font;
-
+	font-weight: $title-font-weight;
 }
 
 h1{
@@ -31,7 +31,7 @@ h1{
 
 h2{
 	font-size: 2.5em;
-	line-height: 1.429em;
+	line-height: 1.3em;
 }
 h3{
 	font-size: 1.625em;

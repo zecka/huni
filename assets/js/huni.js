@@ -25,21 +25,24 @@
 	
 	
 	$(window).scroll(function() {
-		var sticky = $('body.header-type-default header .header-wrap'),
+		var sticky = $('body:not(.header-type-left) header .header-wrap'),
 			scroll = $(window).scrollTop();
 			headerHeight=$('header').outerHeight();
 
 		if (scroll > 50){
-			$('body.header-type-default header').css('height',headerHeight);
+			$('body:not(.header-type-left) header').css('height',headerHeight);
 
 			sticky.addClass('sticky');
 		}
 		else{
 			sticky.removeClass('sticky');
-			$('body.header-type-default header').css('padding-top',"");
+			$('body:not(.header-type-left) header').css('padding-top',"");
+			$('body:not(.header-type-left) header').css('height','auto');
+
 
 		}
 	});
 
 		
 })(jQuery)
+

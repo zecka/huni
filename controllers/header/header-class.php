@@ -30,7 +30,7 @@ function huni_header_transparent_class($classes){
 		$classes[] = 'inverted';
 	}
 	$classes[] = 'primarybg';
-	if(is_front_page() || $huni_options['transparent-header']==true){
+	if(is_front_page() || $huni_options['transparent-header']==true || rwmb_meta('huni-header-type') == 'transparent'){
 		$classes[] = 'transparent';
 	}
 	return $classes;     

@@ -37,7 +37,7 @@ global $huni_options;
 
 						<a class="fancybox thumbnail" id="post-<?php the_ID(); ?>" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 							<figure>
-								<?php the_post_thumbnail('medium', array('class' => 'aligncenter photo')); ?>
+								<?php the_post_thumbnail('large', array('class' => 'aligncenter photo')); ?>
 								<figcaption>
 									<span class="title"><?php echo the_title(); ?></span>
 								</figcaption>

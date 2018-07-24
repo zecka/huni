@@ -1,14 +1,33 @@
 
-$primary-color: #c62650 !default;	
+/* ----------------------------
+	    PRIMARY VARIABLE
+---------------------------- */
+
+$primary-color: #00ff00 !default;	
 $secondary-color: #5842dc !default ;
 $primary-font: 'Roboto', sans-serif !default ;
+$primary-font-weight: 300 ;
+
 $title-font: 'Merriweather Sans', sans-serif !default ;
+$title-font-weight: 400 !default ;
 $logo-width: 118px !default;
 $logo-height: 42px !default;
 $text-color: rgba(0, 0, 0, 0.7) !default;
 $title-color: #000 !default;
 $light-gray: #f8f8f8;
 $header-background: $light-gray !default;
+
+
+
+/* ----------------------------------------
+	  VARIABLE FOR CONDITIONAL DISPLAY
+----------------------------------------- */
+$secondary-on-header: true !default;
+$search-on-header: true !default;
+
+$logo-on-sticky: true !default;
+$secondary-on-sticky: true !default;
+$search-on-sticky: true !default;
 
 
 $primary-dark: #242f39;

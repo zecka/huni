@@ -77,6 +77,9 @@
 		}
 		.comments_number{
 			color: $primary-color;
+			white-space: nowrap;
+			display: inline-block;
+			margin-top: 10px;
 		}
 		
 		

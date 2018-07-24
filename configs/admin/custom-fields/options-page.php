@@ -30,8 +30,21 @@ function huni_option_pages_custom_fields( $meta_boxes ) {
 				'placeholder' => esc_html__( 'Select an Item', HUNI_TEXT_DOMAIN ),
 				'options' => array(
 					'default' => 'Default value',
-					1 => 'Display',
-					0 => 'Hidden',
+					'display' => 'Display',
+					'hide' => 'Hidden',
+				),
+				'std' => 'default',
+			),
+			
+			array(
+				'id' => $prefix . 'header-type',
+				'name' => esc_html__( 'Header type', HUNI_TEXT_DOMAIN ),
+				'type' => 'select',
+				//'placeholder' => esc_html__( 'Select an header type', HUNI_TEXT_DOMAIN ),
+				'options' => array(
+					'default' => 'Default value',
+					'normal' => 'Normal',
+					'transparent' => 'Transparent',
 				),
 				'std' => 'default',
 			),
@@ -41,3 +54,5 @@ function huni_option_pages_custom_fields( $meta_boxes ) {
 	return $meta_boxes;
 }
 add_filter( 'rwmb_meta_boxes', 'huni_option_pages_custom_fields' );
+
+

@@ -2,8 +2,6 @@
 	    HEADER 
 ------------------ */
 
-
-
 .logo{
 	display: block;
 	width: $logo-width;
@@ -40,46 +38,13 @@ header{
 		top: -100px;
 		transition: all .3s ease-in-out;
 		width: 100%;
-		&.sticky{
-			background-color: rgba(0, 0, 0, 0.7);
-			position: fixed;
-			top: 0;
-			z-index: 90;
-			padding: 20px 0;
-			&.open{
-				position: static;
-			}
-			
-			@include breakpoint(tablette) {
-				.header-flex{
-					flex-direction: row;
-				}
-				ul{
-					padding: 0;
-					margin: 0;
-				}
-				.logo{
-					display: none;
-				}
-				.secondary_nav{
-					position: static;
-					a{
-						display: none;
-					}
-					a.huni-search{
-						display: block;
-					}
-				}
-			}
-
-
-		}
 		
 	}
 
 	.logo{
 		@include breakpoint(tablette) {
-			margin: 0 0 20px;
+			margin: 0 auto 20px;
+			
 		}
 
 	}
@@ -93,14 +58,24 @@ header{
 			text-align: left;
 			
 		}
+		li.current-menu-item,
+		li.current-page-item{
+			font-weight: bold;
+		}
 
 	}
-	.secondary_nav{
+	.secondary{
 		@include breakpoint(tablette) {
 			position: absolute;
-			top: 40px;
 			right: 40px;
 		}
+		
+		.huni-search{
+			display: inline-block;
+			margin-top: 10px;
+		}
+		
+		
 	}
 	&.inverted{
 		a{
@@ -111,12 +86,14 @@ header{
 		margin-left: 20px;
 	}
 }
-nav{
+header nav{
 	ul{
 		list-style: none;
 		li{
 			display: inline-block;
-			margin-right: 33px;
+			&+li{
+				margin-left: 33px;
+			}
 		}
 	}
 }
@@ -203,7 +180,7 @@ nav{
 				color: #000;
 			}
 		}
-		nav.secondary_nav{
+		nav.secondary{
 			width: 100%;
 			text-align: center;
 			margin-top: 50px;
@@ -211,24 +188,6 @@ nav{
 	}
 }
 
-.header-type-default{
-	.header-flex{
-		@include breakpoint(tablette){
-		flex-direction: row;
-		justify-content: space-between;
-		padding-top: 70px;
-			.logo{
-				position: absolute;
-				top: 30px;
-				left: 50%;
-				transform: translateX(-50%);
-			}
-			.secondary_nav{
-				position: static;
-			}
-		}
-	}
-}
 nav .menu {
 	&>li{
 		padding-bottom: 15px;
@@ -300,6 +259,182 @@ nav .menu {
 	}
 }
 
+/*-----------------------------
+		HEADER TYPE Advanced 
+------------------------------ */
+body.header-type-advanced{
+	@include breakpoint(sm-up) {
+		header{
+			padding-bottom: 0;
+		}
+	}
+	.header-wrap:not(.sticky){
+		.logo{
+			margin: 0;
+		}
+		.header-flex{
+			flex-flow: row wrap;
+		}
+		.menu>li{
+			padding-top: 15px;
+		}
+		
+		.primary{
+			order: 3;
+			background-color: rgba(0, 0, 0, 0.2);
+			width: 100%;
+			margin: 35px -7.5vw 0;
+			width: 100vw;
+			ul.menu{
+				margin: 5px 0;
+			}
+			
+		}
+		.secondary{
+			order:2;
+		}
+	}
+	
+}
+/*-----------------------------
+		HEADER TYPE LEFT 
+------------------------------ */
+@include breakpoint(sm-up) {
+	body.header-type-left{
+		.huni-open-toggle{
+			display: inline-block;
+		}
+		#wrapper{
+			padding-left: 300px;
+			position: relative;
+		}
+		header{
+			position: absolute;
+			height: 100%;
+			width: 300px;
+			left: 0;
+			bottom: 0;
+			top: 0;
+			background-color: $header-background;
+			box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.1);
+		}
+		.header-flex{
+			display: block;
+		}
+		.logo{
+			margin: auto;
+		}
+		nav.primary{
+			ul{
+				padding: 0;
+				li{
+					display: block;
+					margin: 0;
+					padding: 1em 0;
+					font-size: 1.2em;
+					&+li{
+						border-top: 1px solid rgba($primary-color, 0.1);
+					}
+					&::after{
+						display: none;
+					}
+				}
+				
+				.sub-menu{
+					position: static;
+					opacity: initial;
+					text-align: center;
+					box-shadow: none;
+					background-color: transparent;
+					transition: none;
+					margin-top: 20px;
+					display: none;
+	
+					&.active{
+	
+					}
+					a:hover{
+						color: $primary-color;
+					}
+					li{
+						display: block;
+						padding: 0 5px;
+						font-size: .85em;
+						background-color: transparent;
+						&+li{
+							border-top: none;
+						}
+					}
+				}
+			}
+		}
+		.secondary{
+			position: relative;
+			top: initial;
+			right: initial;
+			text-align: center;
+			padding-top: 50px;
+			.huni-search{
+				position: absolute; top: 0; 
+				left:calc(50% - 20px);
+				display: block;
+				width: 40px;
+				border-radius: 30px;
+				font-size: 1.3em;
+				color: rgba(0, 0, 0, 0.3);
+				//border: 1px solid $primary-color;
+				i{
+					margin: 0;
+				}
+			}
+		}
+		
+	}
+}
+/*-----------------------------
+		STICKY HEADER
+------------------------------ */
+.header-wrap{
+	&.sticky{
+		background-color: rgba(0, 0, 0, 0.7);
+		position: fixed;
+		top: 0;
+		z-index: 90;
+		padding: 20px 0;
+		&.open{
+			position: static;
+		}
+		.secondary a.huni-search{
+			display: inline-block;
+			margin-top: 10px;
+		}
+		@include breakpoint(tablette) {
+			.header-flex{
+				flex-direction: row;
+			}
+			ul{
+				padding: 0;
+				margin: 0;
+			}
+			.logo{
+				display: none;
+			}
+			.secondary{
+				position: static;
+				a{
+					display: none;
+				}
+				a.huni-search{
+					display: block;
+				}
+			}
+		}
+
+
+	}
+}
+/*---------------------------
+*/
 /*-----------------------------
 		MODAL SEARCH
 ------------------------------ */
@@ -373,95 +508,7 @@ nav .menu {
 }
 
 
-@include breakpoint(sm-up) {
-	body.header-type-left{
-		#wrapper{
-			padding-left: 300px;
-			position: relative;
-		}
-		header{
-			position: absolute;
-			height: 100%;
-			width: 300px;
-			left: 0;
-			bottom: 0;
-			top: 0;
-			background-color: $header-background;
-			box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.1);
-		}
-		.header-flex{
-			display: block;
-		}
-		.logo{
-			margin: auto;
-		}
-		nav.primary{
-			ul{
-				padding: 0;
-				li{
-					display: block;
-					margin: 0;
-					padding: 1em 0;
-					font-size: 1.2em;
-					&+li{
-						border-top: 1px solid rgba($primary-color, 0.1);
-					}
-					&::after{
-						display: none;
-					}
-				}
-				
-				.sub-menu{
-					position: static;
-					opacity: initial;
-					text-align: center;
-					box-shadow: none;
-					background-color: transparent;
-					transition: none;
-					margin-top: 20px;
-					display: none;
-	
-					&.active{
-	
-					}
-					a:hover{
-						color: $primary-color;
-					}
-					li{
-						display: block;
-						padding: 0 5px;
-						font-size: .85em;
-						background-color: transparent;
-						&+li{
-							border-top: none;
-						}
-					}
-				}
-			}
-		}
-		.secondary_nav{
-			position: relative;
-			top: initial;
-			right: initial;
-			text-align: center;
-			padding-top: 50px;
-			.huni-search{
-				position: absolute; top: 0; 
-				left:calc(50% - 20px);
-				display: block;
-				width: 40px;
-				border-radius: 30px;
-				font-size: 1.3em;
-				color: rgba(0, 0, 0, 0.3);
-				//border: 1px solid $primary-color;
-				i{
-					margin: 0;
-				}
-			}
-		}
-		
-	}
-}
+
 $padding-button:5px;
 .header-type-default .huni-open-toggle{
 	@include breakpoint(sm-up){
@@ -474,8 +521,7 @@ $padding-button:5px;
 	box-sizing: content-box;
 	padding: $padding-button;
 	border-radius: 20px;
-	//border: 1px solid #000;
-	display: inline-block;
+	display: none; // inline-block on display
 	margin-left: 10px;
 	margin-top: 1px;
 	position: absolute;
@@ -512,6 +558,34 @@ $padding-button:5px;
 		position: relative;
 		float: right;
 	}
+}
+
+
+
+/* ----------------------------
+	  CONDITIONAL DISPLAY
+---------------------------- */
+
+
+@if $secondary-on-header == false {
+	.header-wrap:not(.sticky) .secondary .button{ display: none !important; }
+}
+@if $search-on-header == false {
+	.header-wrap:not(.sticky) .secondary .huni-search{ display: none !important; }
+}
+
+@if $search-on-header == false and $secondary-on-header == false{
+	.header-wrap:not(.sticky) .secondary { display: none !important; }
+}
+
+@if $logo-on-sticky == false {
+	.header-wrap.sticky .logo{ display: none !important; }
+}
+@if $secondary-on-sticky == false {
+	.header-wrap.sticky .secondary .button{ display: none !important; }
+}
+@if $search-on-sticky == false {
+	.header-wrap.sticky .secondary .huni-search{ display: none !important; }
 }
 
 

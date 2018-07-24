@@ -30,13 +30,23 @@
 						<a class="logo" href="<?php echo home_url(); ?>">
 							<img src="<?php echo $huni_options['logo-'.$logo_variant]['url']; ?>" />
 						</a>
+						
 						<nav class="primary">
-							
+							<div class="primary-inner">
 							<?php wp_nav_menu( array( 'menu' =>'primary', 'container' => false, 'walker' => new Huni_Nav_Walker()) ); ?>
+							</div>
 						</nav>
-						<nav class="secondary_nav">
-							<a href="#" class="button">Shop</a>
-							<a href="#" class="button alt">Login</a>
+						<?php 
+							
+						
+						?>
+						<nav class="secondary">
+							<?php if($huni_options['secondary-btn-1-txt']): ?>
+								<a href="<?php echo $huni_options['secondary-btn-1-url']; ?>" class="button"><?php echo $huni_options['secondary-btn-1-txt']; ?></a>
+							<?php endif; ?>
+							<?php if($huni_options['secondary-btn-2-txt']): ?>
+							<a href="<?php echo $huni_options['secondary-btn-2-url']; ?>" class="button alt"><?php echo $huni_options['secondary-btn-2-txt']; ?></a>
+							<?php endif; ?>
 							<?php echo huni_ajax_search(); ?>
 						</nav>
 					</div>
@@ -48,7 +58,8 @@
 				</div>
 			</div>
 		</header>
-		<?php if(!is_front_page() && !is_404()){ ?>
+		<?php $hide_title = rwmb_meta( 'huni-enable-page-title' ); ?>
+		<?php if(!is_front_page() && !is_404() && $hide_title !== 'hide'){ ?>
 			<section id="pageTitle">
 				<div class="container">
 					<h1><?php

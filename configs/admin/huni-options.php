@@ -66,9 +66,9 @@ $layout_options=array(
  */
  
  Redux::setSection( $opt_name, array(
-	'title'				  => __( 'Option générale', 'redux-framework-demo' ),
+	'title'				  => __( 'Option générale', HUNI_TEXT_DOMAIN ),
 	'id'			   => 'basic',
-	'desc'				 => __( 'These are really basic fields!', 'redux-framework-demo' ),
+	'desc'				 => __( 'These are really basic fields!', HUNI_TEXT_DOMAIN ),
 	'customizer_width' => '400px',
 	'icon'				 => 'el el-home'
 ) );
@@ -76,18 +76,18 @@ $layout_options=array(
 
 
 Redux::setSection( $opt_name, array(
-		'title'			   => __( 'Branding', 'redux-framework-demo' ),
+		'title'			   => __( 'Branding', HUNI_TEXT_DOMAIN ),
 		'id'				=> 'basic-branding',
 		'subsection'		  => true,
 		'customizer_width' => '450px',
-		'desc'				  => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/checkbox/" target="_blank">docs.reduxframework.com/core/fields/checkbox/</a>',
+		'desc'				  => __( 'For full documentation on this field, visit: ', HUNI_TEXT_DOMAIN ) . '<a href="//docs.reduxframework.com/core/fields/checkbox/" target="_blank">docs.reduxframework.com/core/fields/checkbox/</a>',
 		'fields'		   => array(
 			array(
 				'id'		=> 'opt-checkbox',
 				'type'		  => 'checkbox',
-				'title'	   => __( 'Checkbox Option', 'redux-framework-demo' ),
-				'subtitle' => __( 'No validation can be done on this field type', 'redux-framework-demo' ),
-				'desc'		  => __( 'This is the description field, again good for additional info.', 'redux-framework-demo' ),
+				'title'	   => __( 'Checkbox Option', HUNI_TEXT_DOMAIN ),
+				'subtitle' => __( 'No validation can be done on this field type', HUNI_TEXT_DOMAIN ),
+				'desc'		  => __( 'This is the description field, again good for additional info.', HUNI_TEXT_DOMAIN ),
 				'default'  => '1'// 1 = on | 0 = off
 			),
 			array(
@@ -96,10 +96,10 @@ Redux::setSection( $opt_name, array(
 				'url'		 => true,
 				'height'   => '110',
 				'width'	   => 110,
-				'title'	   => __( 'Logo Dark', 'redux-framework-demo' ),
+				'title'	   => __( 'Logo Dark', HUNI_TEXT_DOMAIN ),
 				'compiler' => 'true',
-				'desc'		  => __( 'Your logo in dark for light background', 'redux-framework-demo' ),
-				'subtitle' => __( 'PNG is outdated please use SVG', 'redux-framework-demo' ),
+				'desc'		  => __( 'Your logo in dark for light background', HUNI_TEXT_DOMAIN ),
+				'subtitle' => __( 'PNG is outdated please use SVG', HUNI_TEXT_DOMAIN ),
 				'default'  => array( 'url' => get_template_directory_uri().'/assets/img/huni-logo-black.svg' ),
 
 			),
@@ -107,10 +107,10 @@ Redux::setSection( $opt_name, array(
 				'id'		=> 'logo-light',
 				'type'		  => 'media',
 				'url'		 => true,
-				'title'	   => __( 'Logo Light', 'redux-framework-demo' ),
+				'title'	   => __( 'Logo Light', HUNI_TEXT_DOMAIN ),
 				'compiler' => 'true',
-				'desc'		  => __( 'Your logo in light for dark background', 'redux-framework-demo' ),
-				'subtitle' => __( 'PNG is outdated please use SVG', 'redux-framework-demo' ),
+				'desc'		  => __( 'Your logo in light for dark background', HUNI_TEXT_DOMAIN ),
+				'subtitle' => __( 'PNG is outdated please use SVG', HUNI_TEXT_DOMAIN ),
 				'default'  => array( 'url' => get_template_directory_uri().'/assets/img/huni-logo-white.svg' ),
 
 			),
@@ -170,6 +170,7 @@ Redux::setSection($opt_name, array(
 			'type'		=> 'select',
 			'options'	=> array(
 				'default' 	=> __('Default', HUNI_TEXT_DOMAIN),
+				'advanced'		=>__('Advanced', HUNI_TEXT_DOMAIN),
 				'left'		=>__('Left', HUNI_TEXT_DOMAIN),
 			),
 			'default'	=> 'default',	
@@ -193,7 +194,89 @@ Redux::setSection($opt_name, array(
 			'title'	  => __( 'Transparent Header', HUNI_TEXT_DOMAIN ),
 			'subtitle' => __( 'Enable transparent header position absolute', HUNI_TEXT_DOMAIN ),
 			'default'  => false,
-		)
+		),
+		
+		/* ================================================
+			         SECONDARY NAV
+		================================================   */
+		array(
+			'title'		=> __('Display secondary menu button on header'),
+			'id'		=> 'secondary-on-header',
+			'type'		=> 'switch',
+			'default'	=> true,
+		),
+		
+		array(
+				'id'	 => 'section-end',
+				'type'	 => 'section',
+				'indent' => false, // Indent all options below until the next 'section' option is set.
+			),
+		
+
+		array(
+			'title'		=> __('Display search on header'),
+			'id'		=> 'search-on-header',
+			'type'		=> 'switch',
+			'default'	=> true,
+		),
+		array(
+			'title'		=> __('Display logo on sticky header'),
+			'id'		=> 'logo-on-sticky',
+			'type'		=> 'switch',
+			'default'	=> true,
+		),
+		
+		array(
+			'title'		=> __('Display search bar on sticky'),
+			'id'		=> 'search-on-sticky',
+			'type'		=> 'switch',
+			'default'	=> true,
+		),
+		
+		array(
+			'id'	   => 'section-start',
+			'type'	   => 'section',
+			'title'	   => __( 'Secondary Nav Button', HUNI_TEXT_DOMAIN ),
+			//'subtitle' => __( 'Secondary Nav button style', 'redux-framework-demo' ),
+			'indent'   => false, // Indent all options below until the next 'section' option is set.
+		),
+		array(
+			'title'		=> __('Display secondary nav button on header'),
+			'id'		=> 'secondary-on-header',
+			'type'		=> 'switch',
+			'default'	=> true,
+		),
+		array(
+			'title'		=> __('Display secondary nav button on stick header'),
+			'id'		=> 'secondary-on-sticky',
+			'type'		=> 'switch',
+			'default'	=> true,
+		),
+		
+		array(
+			'title'		=> __('Secondary nav button 1 text', HUNI_TEXT_DOMAIN),
+			'id'		=> 'secondary-btn-1-txt',
+			'type'		=> 'text',
+			'default'	=> 'shop',
+		),
+		array(
+			'title'		=> __('Secondary nav button 1 url', HUNI_TEXT_DOMAIN),
+			'id'		=> 'secondary-btn-1-url',
+			'type'		=> 'text',
+			'default'	=> '#',
+		),
+		array(
+			'title'		=> __('Secondary nav button 2 text', HUNI_TEXT_DOMAIN),
+			'id'		=> 'secondary-btn-2-txt',
+			'type'		=> 'text',
+			'default'	=> 'contact',
+		),
+		array(
+			'title'		=> __('Secondary nav button 2 url', HUNI_TEXT_DOMAIN),
+			'id'		=> 'secondary-btn-2-url',
+			'type'		=> 'text',
+			'default'	=> '#',
+		),
 	)
 ));
 
@@ -326,18 +409,108 @@ Redux::setSection($opt_name, array(
 	)
 ));
 
+Redux::setSection($opt_name, array(
+	'title'			=> __('Footer', HUNI_TEXT_DOMAIN),
+	'id'			=> 'footer',
+	'subsection' 	=> true,
+	'fields'		=> array(
+		array(
+			'title'			=> __('Enable partners block in footer', HUNI_TEXT_DOMAIN),
+			'id'			=>'footer_partners',
+			'type'			=> 	'switch',
+			'default'   	=> true,
+			'description'	=> 'Add logo on custom post type "partners"',
+		),
+		array(
+			'title'			=>__('Partners block intro text', HUNI_TEXT_DOMAIN),
+			'id'			=> 'intro_partners',
+			'type'			=> 'textarea',
+			'required' 		=> array( 'footer_partners', '=', '1' ),
+		),
+		
+		array(
+			'title'			=> __('Enable call to action in footer', HUNI_TEXT_DOMAIN),
+			'id'			=>'footer_cta',
+			'type'			=> 	'switch',
+			'default'   	=> true,
+			'description'	=> 'Add logo on custom post type "partners"',
+		),
+		array(
+			'title'			=>__('Call to action title', HUNI_TEXT_DOMAIN),
+			'id'			=> 'footer_cta_title',
+			'type'			=> 'textarea',
+			'required' 		=> array( 'footer_cta', '=', '1' ),
+		),
+		array(
+			'title'			=>__('Call to action texte', HUNI_TEXT_DOMAIN),
+			'id'			=> 'footer_cta_txt',
+			'type'			=> 'textarea',
+			'required' 		=> array( 'footer_cta', '=', '1' ),
+		),
+		array(
+			'title'			=>__('Call to action url', HUNI_TEXT_DOMAIN),
+			'id'			=> 'footer_cta_url',
+			'type'			=> 'text',
+			'required' 		=> array( 'footer_cta', '=', '1' ),
+		),
+		array(
+			'title'			=>__('Call to action button text', HUNI_TEXT_DOMAIN),
+			'id'			=> 'footer_cta_btn_txt',
+			'type'			=> 'text',
+			'required' 		=> array( 'footer_cta', '=', '1' ),
+		),
+		
+		array(
+			'title'			=> __('Add a mailchimp form on footer', HUNI_TEXT_DOMAIN),
+			'id'			=>'footer_mailchimp',
+			'type'			=> 	'switch',
+			'default'   	=> true,
+			'description'	=> 'First you need to install mailchimp for wordpress <a href="https://fr.wordpress.org/plugins/mailchimp-for-wp/">https://fr.wordpress.org/plugins/mailchimp-for-wp/</a>',
+		),
+		array(
+			'title'			=>__('Mailchimp form shortcode', HUNI_TEXT_DOMAIN),
+			'id'			=> 'footer_mailchimp_shortcode',
+			'type'			=> 'textarea',
+			'required' 		=> array( 'footer_mailchimp', '=', '1' ),
+			'description'	=> 'Default huni form code: &lt;input type=&quot;email&quot; name=&quot;EMAIL&quot; placeholder=&quot;Your email address&quot; required /&gt;
+&lt;input class=&quot;button&quot; type=&quot;submit&quot; value=&quot;Submit&quot; /&gt;'
+		),
+		
+		array(
+			'title'			=>__('Footer copyright', HUNI_TEXT_DOMAIN),
+			'id'			=> 'footer_copyright',
+			'type'			=> 'textarea',
+			'default'		=> 'Copyright 2018 © <a href="https://www.zeckart.com">Huni</a> All rights reserved.',
+		),
+		
+		array(
+			'title'			=> __('Display a pre-footer widget zone', HUNI_TEXT_DOMAIN),
+			'id'			=>'prefooter',
+			'type'			=> 	'switch',
+			'default'   	=> true,
+		),
+	)
+	
+));
 Redux::setSection( $opt_name, array(
-		'title'	 => __( 'Typography', 'redux-framework-demo' ),
+		'title'	 => __( 'Typography', HUNI_TEXT_DOMAIN ),
 		'id'	 => 'typography',
-		'desc'	 => __( 'For full documentation on this field, visit: ', 'redux-framework-demo' ) . '<a href="//docs.reduxframework.com/core/fields/typography/" target="_blank">docs.reduxframework.com/core/fields/typography/</a>',
+		'desc'	 => __( 'For full documentation on this field, visit: ', HUNI_TEXT_DOMAIN ) . '<a href="//docs.reduxframework.com/core/fields/typography/" target="_blank">docs.reduxframework.com/core/fields/typography/</a>',
 		'icon'	 => 'el el-font',
 		'fields' => array(
 			array(
 				'id'		=> 'body-font',
 				'type'		  => 'typography',
-				'title'	   => __( 'Body Font', 'redux-framework-demo' ),
-				'subtitle' => __( 'Specify the body font properties.', 'redux-framework-demo' ),
+				'title'	   => __( 'Body Font', HUNI_TEXT_DOMAIN ),
+				'subtitle' => __( 'Specify the body font properties.', HUNI_TEXT_DOMAIN ),
 				'google'   => true,
+				'font-backup'	=> false,
+				'all_styles'  	=> false,
+				'font-size'		=> false,
+				'text-align'	=> false,
+				'line-height'	=> false,
+				'color'			=> false,
+				'subsets'		=> false,
 				'units'		  => 'px',
 				'default'  => array(
 					'color'			=> '#dd9933',
@@ -350,23 +523,25 @@ Redux::setSection( $opt_name, array(
 			array(
 				'id'				=> 'title-font',
 				'type'		  	=> 'typography',
-				'title'		  	=> __( 'Title font', 'redux-framework-demo' ),
+				'title'		  	=> __( 'Title font', HUNI_TEXT_DOMAIN ),
 				'font-backup'	=> false,
 				'all_styles'  	=> false,
 				'font-size'		=> false,
 				'text-align'	=> false,
 				'line-height'	=> false,
+				'color'			=> false,
+				'subsets'		=> false,
 				// Defaults to px
-				'subtitle'		 => __( 'Typography option with each property can be called individually.', 'redux-framework-demo' ),
+				'subtitle'		 => __( 'Typography option with each property can be called individually.', HUNI_TEXT_DOMAIN ),
 				'default'		=> array(
 					'color'			=> '#333',
 					'font-style'  => '700',
 					'font-family' => 'Roboto',
 					'google'		=> true,
-					'font-size'	  => '16px',
-					'line-height' => '40px'
 				),
 			),
 		)
-	) );
+) );
+
+
 

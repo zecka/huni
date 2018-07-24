@@ -3,6 +3,7 @@
 	<?php get_template_part('partials/blog','intro'); ?>
 </div>
 <div class="container">
+
 	<div class="row">
 		<?php huni_sidebar('archive-left'); ?>
 		<main class="<?php huni_main_class(); ?>">

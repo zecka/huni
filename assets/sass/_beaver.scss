@@ -1,0 +1,19 @@
+.fl-row-bg-primary{
+	background-color: $primary-color;
+}
+.fl-row-bg-secondary{
+	background-color: $secondary-color;
+}
+.fl-row-bg-primary-gradient{
+	background-color: $secondary-color;
+	background: linear-gradient(45deg, darken($primary_color, 10%) 0%, $primary_color 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.fl-row-bg-secondary-gradient{
+	background-color: $secondary-color;
+	background: linear-gradient(45deg, darken($secondary_color, 10%) 0%, $secondary_color 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+.fl-row-bg-primary-secondary-gradient{
+	background-color: $primary-color;
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#ffffff+0,7db9e8+100 */
+	background: linear-gradient(45deg, $primary_color 0%, $secondary_color 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}

@@ -1,73 +1,80 @@
 <?php global $huni_options; ?>
-<section id="partners">
-	<div class="container-6  text-center">
-		<p>Trusted by developers and businesses of all sizes to 
-			enable worldwide connectivity.</p>
-	</div>
-	<div class="container logos text-center">
-		<figure>
-			<img src="<?php echo get_template_directory_uri() ?>/assets/img/partners/aos.png" />
-		</figure>
-		<figure>
-			<img src="<?php echo get_template_directory_uri() ?>/assets/img/partners/inking.png" />
-		</figure>
-		<figure>
-			<img src="<?php echo get_template_directory_uri() ?>/assets/img/partners/nelco.png" />
-		</figure>
-		<figure>
-			<img src="<?php echo get_template_directory_uri() ?>/assets/img/partners/river.png" />
-		</figure>
-	</div>
-</section>
-<section id="demo" class="inverted text-center">
+
+<?php if($huni_options['footer_partners']){  ?>
+	<section id="partners">
+		<div class="container-6  text-center">
+			<p><?php echo $huni_options['intro_partners']; ?></p>
+		</div>
+		<div class="container logos text-center">
+			
+			<?php $loop = new WP_Query( array( 'post_type' => 'partner', 'posts_per_page' => '10' ) ); ?>
+			<?php while ( $loop->have_posts() ) : $loop->the_post(); ?>
+				<figure>
+					<a href="<?php echo get_post_meta(get_the_id(), 'partner_external_url', true); ?>">
+					<?php the_post_thumbnail('medium'); ?>
+					</a>
+				</figure>
+			<?php endwhile; wp_reset_query(); ?>
+			
+		</div>
+	</section>
+<?php } ?>
+<?php 
+	if($huni_options['footer_cta']){
+?>
+<section id="footer-cta" class="inverted text-center">
 	<div class="container-6">
-		<h2>We offer Free demo for new&nbsp;Customer</h2>
-		<a class="button" href="#">Request a demo</a>
-	</div>
-	
+		<h2><?php echo $huni_options['footer_cta_title']; ?></h2>
+		<p><?php echo $huni_options['footer_cta_txt'];  ?></p>
+		<a class="button" href="<?php echo $huni_options['footer_cta_url']; ?>">
+			<?php echo $huni_options['footer_cta_btn_txt']; ?>
+		</a>
+	</div>	
 </section>
+<?php } //if footer_cta ?>
 
 	<footer>
-		<div class="container-8 newsletter clearfix">
-			<input type="email" placeholder="Type your email" /><button class="button" >SUBSCRIBE</button>
-		</div>
-		<div class="container">
-			<div class="row">
-				<div class="col-4">
-					<span class="logo black">
-						<img src="<?php echo $huni_options['logo-dark']['url']; ?>" />
-					</span>
-					<div class="social-links">
-						<a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-						<a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-						<a href="#"><i class="fa fa-pinterest-p" aria-hidden="true"></i></a>
-						<a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+		<?php if($huni_options['footer_mailchimp']){ ?>
+			<div class="container-8 newsletter clearfix">
+				<?php echo do_shortcode($huni_options['footer_mailchimp_shortcode']); ?>
+			</div>
+		<?php } ?>
+		<?php if($huni_options['prefooter']){ ?>
+			<div id="prefooter" class="container">
+				<div class="row">
+					<div class="col-4">
+						<?php 
+						if ( is_active_sidebar( 'footer-one' ) ){
+							dynamic_sidebar( 'footer-one' );
+						} 
+						?>
+					</div>
+					<div class="col-4">
+						<nav>
+							<ul>
+								<li><a href="#">+8801912704287</a></li>
+								<li><a href="#">Contact Us</a></li>
+								<li><a href="#">Support Resources</a></li>
+								<li><a href="#">About Us</a></li>
+							</ul>
+						</nav>
+					</div>
+					<div class="col-4">
+						<nav class="right">
+							<ul>
+								<li><a href="#">Blog</a></li>
+								<li><a href="#">Documentation</a></li>
+								<li><a href="#">Community</a></li>
+								<li><a href="#">Privacy</a></li>
+							</ul>
+						</nav>
 					</div>
 				</div>
-				<div class="col-4">
-					<nav>
-						<ul>
-							<li><a href="#">+8801912704287</a></li>
-							<li><a href="#">Contact Us</a></li>
-							<li><a href="#">Support Resources</a></li>
-							<li><a href="#">About Us</a></li>
-						</ul>
-					</nav>
-				</div>
-				<div class="col-4">
-					<nav class="right">
-						<ul>
-							<li><a href="#">Blog</a></li>
-							<li><a href="#">Documentation</a></li>
-							<li><a href="#">Community</a></li>
-							<li><a href="#">Privacy</a></li>
-						</ul>
-					</nav>
-				</div>
 			</div>
-		</div>
+		<?php } ?>
 		<div class="copyright text-center inverted">
-			Copyright 2017 © <a href="#">2017, Huni</a> All rights reserved.
+			<?php
+				 echo $huni_options['footer_copyright']; ?>
 		</div>
 	</footer>
 	</div><!-- #wrapper -->

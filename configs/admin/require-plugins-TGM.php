@@ -7,6 +7,10 @@ add_action( 'tgmpa_register', 'huni_register_required_plugins' );
 function huni_register_required_plugins() {
 	$plugins = array(
 		array(
+				'name'      => 'WordPress Page Builder – Beaver Builder',
+				'slug'      => 'beaver-builder-lite-version',
+		),
+		array(
 				'name'      => 'Google Maps module for Beaver Builder',
 				'slug'      => 'beaver-builder-googlemaps',
 				'source'    => 'https://github.com/thierrypigot/beaver-builder-googlemaps/archive/master.zip',

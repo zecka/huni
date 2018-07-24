@@ -40,16 +40,32 @@
 				
 
 }
-#demo{
+#footer-cta{
 	background-color: $primary-dark;
-
+	h2{
+		margin-bottom: 10px;
+		margin-top: 0;
+	}
+	.button{
+		margin-top: 10px;
+	}
 }
 
 
 footer{
 	.newsletter{
-		padding-top: 150px;
-		padding-bottom: 170px;
+			padding-top: 150px;
+			padding-bottom: 120px;
+
+		.mc4wp-form input[type=submit]{
+			border-radius: 100px;
+			text-transform: uppercase;
+			font-weight: lighter;
+			&:hover{
+				background-color: $primary-dark;
+				color: #fff;
+			}
+		}
 		input, .button{
 			float: left;
 			height: 63px;
@@ -105,11 +121,15 @@ footer{
 			content: "";
 		}
 	}
+	#prefooter{
+		padding-top: 50px;
+	}
 	nav{
 		text-align: center;
 		ul{
 			text-align: left;
 			display: inline-block;
+			padding: 0;
 		}
 		&.right{
 			text-align: right;
